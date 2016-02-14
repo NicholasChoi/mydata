@@ -1,0 +1,38 @@
+- enabling key repeats on a Mac
+defaults write -g ApplePressAndHoldEnabled 0
+
+- disabling mouse acceleration on a Mac
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
+defaults write .GlobalPreferences com.apple.trackpad.scaling -1
+defaults write .GlobalPreferences com.apple.scrollwheel.scaling 0.1
+(Run the above in Terminal.app, log out, and then back in. If it didn't work something else has probably touched the file. That's unlikely to happen shortly after a clean login, so just do it again. If you succeed, don't be afraid to change mouse settings in System Preferences. It'll be left at -1 as long as you don't touch the speed slider.)
+
+- caching GitHub password (credential helper)
+https://help.github.com/articles/caching-your-github-password-in-git/
+http://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typing-when-using-https-github
+
+- iTerm2
+https://www.iterm2.com/
+
+- zsh & oh-my-zsh
+https://nolboo.github.io/blog/2015/08/21/oh-my-zsh/
+
+- better auto-completion for oh-my-zsh
+http://stackoverflow.com/questions/24226685/have-zsh-return-case-insensitive-auto-complete-matches-but-prefer-exact-matches 
+Create a file ~/.oh-my-zsh/custom/better-completion.zsh (assuming you are using default paths for oh-my-zsh) with the following line
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+- brew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+- tig
+brew install tig
+
+- git flow
+brew install git-flow
+
+- wget
+brew install wget
+
+- setting vim as the editor for git in order to prevent commit errors
+git config --global core.editor $(which vim)

@@ -1,0 +1,56 @@
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+" (Canceled)
+" Better matching braces
+" This way, whenever you type % you jump to the matching object,
+" and you visually select all the text in between.
+" It's useful for indenting a C/C++ method/class:
+" go to opening/closing brace, and type '=%'
+"noremap % v%
+
+" Better copy & paste
+" When you want to paste large blocks of code into vim, press F2 before you
+" paste. At the bottom you should see ``-- INSERT (paste) --``.
+set pastetoggle=<F2>
+
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code here and
+" then press ``>`` several times.
+vnoremap < <gv
+vnoremap > >gv
+
+" Color scheme
+" mkdir -p ~/.vim/colors && cd ~/.vim/colors
+" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+set t_Co=256
+color wombat256mod
+
+" Enable syntax highlighting
+" You need to reload this file for the change to apply
+filetype off
+filetype plugin indent on
+syntax on
+
+" Useful settings
+set history=700
+set undolevels=700
+
+" Real programmers don't use TABs but spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+" Make search case insensitive only when a pattern contains lowercase letters only
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Disable stupid backup and swap files - they trigger too many events
+" for file system watchers
+set nobackup
+set nowritebackup
+set noswapfile

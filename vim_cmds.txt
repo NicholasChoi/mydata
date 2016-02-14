@@ -1,0 +1,17 @@
+* Frequently Used Vim Commands
+m{a-zA-Z}
+`{a-z}
+q{0-9a-zA-Z"}
+@{0-9a-z".=*}
+@@
+%
+>
+<
+==
+CTRL-O
+CTRL-I
+CTRL-R
+CTRL-W CTRL-V
+CTRL-W CTRL-S
+CTRL-W CTRL-W
+CTRL-W c

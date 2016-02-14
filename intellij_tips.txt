@@ -1,0 +1,35 @@
+- search everywhere
+double tap SHIFT
+
+- generation helper
+COMMAND + N
+
+- list up overridable methods
+기본설정에서는 CONTROL + O이지만,
+Preferences의 Keymap 메뉴를 통해 CONTROL + COMMAND + O로 변경하였음.
+
+- 간편한 method overriding
+e.g. public void onCreate(Bundle savedInstanceState)을 추가하고자 하는 경우,
+공백에 'onC'만 타이핑해도 제안목록이 나타나고 거기에서 선택.
+공백에 'public void onC'를 타이핑한 경우엔 제안목록이 나타나지 않음.
+제안목록이 사라졌을 경우엔 Basic Completion 단축키를 누르면 나타남.
+Basic Completion 단축키는 기본설정에서는 CONTROL + SPACE이지만,
+Preferences의 Keymap 메뉴를 통해 CONTROL + COMMAND + SPACE로 변경하였음.
+
+- 코드 추가/수정 helper
+ALT + ENTER
+e.g. 커서가 클래스 이름에 위치해 있을 때 상기 키조합을 입력하면
+helper 메뉴가 나타남.
+
+- show usages
+ALT + COMMAND + F7
+e.g. 커서가 변수 이름에 위치해 있을 때 상기 키조합을 입력하면
+프로젝트 내에서 상기 변수 이름이 사용된 곳을 보여줌.
+
+- find usages
+ALT + F7
+e.g. 커서가 변수 이름에 위치해 있을 때 상기 키조합을 입력하면
+프로젝트 내에서 상기 변수 이름이 사용된 곳을 검색해줌.
+
+- reformat code
+ALT + COMMAND + L
