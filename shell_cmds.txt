@@ -46,3 +46,13 @@ git checkout branchname filename
       filename에 대응하는 상기 entry를 working tree에 복사함.
       (file을 overwriting하는 대신에 merging하고자 하는 경우엔
           '-p' 또는 '--patch' 옵션을 붙여 실행하면 도움이 됨.)
+
+- copy to the clipboard
+pbcopy
+e.g. $ pbcopy
+     blah<CTRL-J>
+     haha<CTRL-D><CTRL-D>
+     $
+
+- paste from the clipboard
+pbpaste

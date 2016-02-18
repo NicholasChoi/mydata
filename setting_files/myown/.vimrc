@@ -54,3 +54,11 @@ set smartcase
 set nobackup
 set nowritebackup
 set noswapfile
+
+" Vim will use the clipboard register '*' as well as the unnamed register
+" for ordinary yank, delete, change and put operations.
+" e.g. yy => stored both to clipboard register("*) and unnamed register("")
+"      "*yy => stored both to "* and ""
+"      ""yy => stored only to ""
+"      "ayy => stored both to "a and ""
+set clipboard=unnamed

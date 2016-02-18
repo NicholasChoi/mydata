@@ -15,3 +15,7 @@ CTRL-W CTRL-V
 CTRL-W CTRL-S
 CTRL-W CTRL-W
 CTRL-W c
+:reg
+"{0-9a-zA-Z":.%*/}yy  // 1-9: delete histories, 0: latest yank, A-Z: append to a-z
+"{0-9a-zA-Z":.%*/}p
+:h registers

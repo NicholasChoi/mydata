@@ -34,5 +34,9 @@ brew install git-flow
 - wget
 brew install wget
 
+- vim (for getting latest version)
+brew install vim
+(restart terminal)
+
 - setting vim as the editor for git in order to prevent commit errors
 git config --global core.editor $(which vim)
