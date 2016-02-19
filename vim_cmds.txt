@@ -19,3 +19,4 @@ CTRL-W c
 "{0-9a-zA-Z":.%*/}yy  // 1-9: delete histories, 0: latest yank, A-Z: append to a-z
 "{0-9a-zA-Z":.%*/}p
 :h registers
+CTRL-A  // increment the number or character at or after the cursor

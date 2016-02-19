@@ -11,6 +11,12 @@ ls -d .*
 - ls 사용시 디렉토리만 출력하기
 ls -d .*/ */
 
+- git stash에 대해
+// for storing
+git stash
+// for restoring
+git stash pop --index
+
 - git reset과 git checkout에 대해
 git reset (= git reset --mixed HEAD)
     : index의 모든 entry가 HEAD의 그것과 같아지도록 함.

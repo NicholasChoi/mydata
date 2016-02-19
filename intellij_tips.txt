@@ -33,3 +33,12 @@ e.g. 커서가 변수 이름에 위치해 있을 때 상기 키조합을 입력�
 
 - reformat code
 ALT + COMMAND + L
+
+- navigate to a symbol (class, method, variable, etc.)
+ALT + COMMAND + O
+
+- navigate to code block start
+ALT+ COMMAND + [
+
+- navigate to code block end
+ALT+ COMMAND + ]
