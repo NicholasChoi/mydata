@@ -38,5 +38,10 @@ brew install wget
 brew install vim
 (restart terminal)
 
+- httpie
+brew install httpie
+(httpie usage:
+ $ http -f POST www.test.com:5001/remove_messages message_thread_id=99999999)
+
 - setting vim as the editor for git in order to prevent commit errors
 git config --global core.editor $(which vim)

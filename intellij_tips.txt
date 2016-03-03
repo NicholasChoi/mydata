@@ -37,8 +37,19 @@ ALT + COMMAND + L
 - navigate to a symbol (class, method, variable, etc.)
 ALT + COMMAND + O
 
+- navigate to a file
+SHIFT + COMMAND + O
+
 - navigate to code block start
 ALT+ COMMAND + [
 
 - navigate to code block end
 ALT+ COMMAND + ]
+
+- folding
+SHIFT + COMMAND + .
+COMMAND + .
+COMMAND + -
+COMMAND + =
+SHIFT + COMMAND + -
+SHIFT + COMMAND + =
