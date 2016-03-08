@@ -34,17 +34,45 @@ e.g. 커서가 변수 이름에 위치해 있을 때 상기 키조합을 입력�
 - reformat code
 ALT + COMMAND + L
 
+- go to next method
+CONTROL + COMMAND + J
+(기본설정에서는 CONTROL + (아래쪽 방향키)이지만,
+Preferences의 Keymap 메뉴를 통해 위와 같이 변경하였음.)
+
+- go to previous method
+CONTROL + COMMAND + K
+(기본설정에서는 CONTROL + (위쪽 방향키)이지만,
+Preferences의 Keymap 메뉴를 통해 위와 같이 변경하였음.)
+
 - navigate to a symbol (class, method, variable, etc.)
 ALT + COMMAND + O
 
 - navigate to a file
 SHIFT + COMMAND + O
 
+- navigate to a class
+COMMAND + O
+
 - navigate to code block start
 ALT+ COMMAND + [
 
 - navigate to code block end
 ALT+ COMMAND + ]
+
+- navigate file structure (list up class members)
+COMMAND + F12
+ALT + O (Preferences의 Keymap 메뉴를 통해 추가하였음.)
+
+- navigate type hierarchy (display inheritance hierarchy of a class)
+CONTROL + H
+(Vim의 shortcut과 겹치므로 Preferences의 Other Settings의
+Vim Emulation에서 CONTROL + H의 handler를 IDE로 설정해야 함.)
+
+- navigate call hierarchy (display callers of a method hierarchically)
+CONTROL + ALT + H
+
+- jump to source at a search result
+COMMAND + (아래쪽 방향키)
 
 - folding
 SHIFT + COMMAND + .
