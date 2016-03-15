@@ -31,6 +31,9 @@ ALT + F7
 e.g. 커서가 변수 이름에 위치해 있을 때 상기 키조합을 입력하면
 프로젝트 내에서 상기 변수 이름이 사용된 곳을 검색해줌.
 
+- highlight usages in the current file
+SHIFT + COMMAND + F7
+
 - reformat code
 ALT + COMMAND + L
 
@@ -67,12 +70,18 @@ Vim Emulation에서 CONTROL + H의 handler를 IDE로 설정해야 함.)
 - navigate call hierarchy (display callers of a method hierarchically)
 CONTROL + ALT + H
 
+- move to the next occurrence at a search result
+ALT + COMMAND + (아래쪽 방향키)
+
+- move to the previous occurrence at a search result
+ALT + COMMAND + (위쪽 방향키)
+
 - jump to source at a search result
 COMMAND + (아래쪽 방향키)
 
 - fold
 SHIFT + COMMAND + . : the current code block
-COMMAND + .         : the selected block
+COMMAND + .         : the selected block or remove the current fold created by (COMMAND + .)
 COMMAND + -         : the current method
 SHIFT + COMMAND + - : all
 
