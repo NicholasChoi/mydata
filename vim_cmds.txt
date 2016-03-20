@@ -21,3 +21,5 @@ CTRL-W c
 "{0-9a-zA-Z":.%*/}p
 :h registers
 CTRL-A  // increment the number or character at or after the cursor
+v (visual mode) -> i{wpbB<["'}  // select a range
+v (visual mode) -> o  // move cursor to the other end

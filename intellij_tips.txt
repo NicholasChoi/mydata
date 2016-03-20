@@ -94,6 +94,12 @@ SHIFT + COMMAND + Numpad 3 : all to level 3 (Preferences의 Keymap 메뉴를 통
 SHIFT + COMMAND + Numpad 4 : all to level 4 (Preferences의 Keymap 메뉴를 통해 추가하였음.)
 SHIFT + COMMAND + Numpad 5 : all to level 5 (Preferences의 Keymap 메뉴를 통해 추가하였음.)
 
+- extend selection
+ALT + (위쪽 방향키)
+
+- shrink selection
+ALT + (아래쪽 방향키)
+
 - commentize
 COMMAND + /       : the current line or the selected lines
 ALT + COMMAND + / : the selected block
