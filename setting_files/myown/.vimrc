@@ -62,3 +62,6 @@ set noswapfile
 "      ""yy => stored only to ""
 "      "ayy => stored both to "a and ""
 set clipboard=unnamed
+
+" Display line numbers
+"set nu

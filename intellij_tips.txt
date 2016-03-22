@@ -103,3 +103,8 @@ ALT + (아래쪽 방향키)
 - commentize
 COMMAND + /       : the current line or the selected lines
 ALT + COMMAND + / : the selected block
+
+- refactor this
+CONTROL + T
+(Vim의 shortcut과 겹치므로 Preferences의 Other Settings의
+Vim Emulation에서 CONTROL + T의 handler를 IDE로 설정해야 함.)
