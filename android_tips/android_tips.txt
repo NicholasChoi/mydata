@@ -1,0 +1,10 @@
+- Helper to upload Gradle Android Artifacts to Maven repositories
+아래 페이지의 README.md에 나온 usage대로 따라 하면 됨.
+(아래 페이지의 프로젝트를 clone할 필요 없음.)
+https://github.com/chrisbanes/gradle-mvn-push
+
+- PhotoView : Implementation of ImageView for Android that supports zooming, by various touch gestures.
+https://github.com/chrisbanes/PhotoView
+
+- PhotoDraweeView : PhotoView associated with SimpleDraweeView of Fresco image library
+https://github.com/ongakuer/PhotoDraweeView
