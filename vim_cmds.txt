@@ -20,6 +20,7 @@ CTRL-W c
 "{0-9a-zA-Z":.%*/}yy  // 1-9: delete histories, 0: latest yank, A-Z: append to a-z
 "{0-9a-zA-Z":.%*/}p
 :h registers
-CTRL-A  // increment the number or character at or after the cursor
-v (visual mode) -> i{wpbB<["'}  // select a range
-v (visual mode) -> o  // move cursor to the other end
+CTRL-A  // Increment the number or character at or after the cursor.
+v (visual mode) -> i{wpbB<["'}  // Select a range.
+v (visual mode) -> o  // Move cursor to the other end.
+CTRL-N  // Complete the current word. See ":help i_CTRL-N" for details.
