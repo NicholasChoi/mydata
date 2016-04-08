@@ -1,0 +1,4 @@
+1. Karabiner 설치 후 Preferences의 Misc & Uninstall 탭에서 Open private.xml을 클릭한 뒤 private.xml의 내용을 본 폴더의 private.xml의 그것으로 교체
+2. 본 폴더의 screenshot_of_Karabiner_setting.png를 참조하여 Karabiner의 Preferences의 Change Key 탭에서의 설정을 조정
+3. Parallels를 통해 실행한 Windows virtual machine 내에서, 본 폴더의 KoreanKeyboard4MacBook-master의 WindowsRegistry의 HanEng_Hanja_for_virtual_machine.reg 및 Korean_101_keyboard_type_3.reg를 실행 후 Windows 재부팅
+4. 결과로서, Mac에서 한자키가 Command키로서 동작하게 되고, 한영키, 왼쪽 Command키 + space, 또는 오른쪽 Command키를 누르면 한영 전환이 되고, 오른쪽 Alt키를 누르면 한자 변환이 됨. 또한, Windows virtual machine에서 한영키, Shift + space, 또는 오른쪽 Command키를 누르면 한영 전환이 되고, 오른쪽 Alt키를 누르면 한자 변환이 됨.
