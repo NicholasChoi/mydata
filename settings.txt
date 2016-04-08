@@ -45,3 +45,10 @@ brew install httpie
 
 - setting vim as the editor for git in order to prevent commit errors
 git config --global core.editor $(which vim)
+
+- shell script for toggling Karabiner profile
+(Additionally, it is recommended to set a shortcut key combination at BetterTouchTool on "Execute Terminal Command" with the following script.)
+if test "$(/Applications/Karabiner.app/Contents/Library/bin/karabiner selected)" == "0";
+    then /Applications/Karabiner.app/Contents/Library/bin/karabiner select 1;
+    else /Applications/Karabiner.app/Contents/Library/bin/karabiner select 0;
+fi

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+    <item>
+        <name>Hanja Key to Command_L</name>
+        <identifier>remap.hanja2command_L</identifier>
+        <autogen>__KeyToKey__ KeyCode::JIS_EISUU,
+        KeyCode::COMMAND_L, Option::NOREPEAT</autogen>
+    </item>
+    <item>
+        <name style="slight">[fixed] Make external keyboard HanEng, Hanja keys work in mac (except virtual machine, RDC)</name>
+        <item>
+            <name style="slight">[fixed] HanEng Key to Command+Space</name>
+            <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+            <identifier>remap.ksc_haneng2commandSpace_fixed</identifier>
+            <autogen>__KeyToKey__ KeyCode::JIS_KANA, KeyCode::SPACE, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+        </item>
+        <item>
+            <name style="slight">[fixed] Hanja Key to Option+Return</name>
+            <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+            <identifier>remap.ksc_hanja2optionReturn_fixed</identifier>
+            <autogen>__KeyToKey__ KeyCode::JIS_EISUU, KeyCode::OPTION_L, KeyCode::RETURN, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
+        </item>
+    </item>
+</root>
