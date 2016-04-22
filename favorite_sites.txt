@@ -3,3 +3,6 @@ https://pixlr.com/editor/
 
 - news & collections of tech
 https://www.producthunt.com/
+
+- computational knowledge search engine
+https://www.wolframalpha.com/
