@@ -28,3 +28,6 @@ http://www.ipnomics.co.kr/
 
 - 특허 관련 기관 사이트 링크
 http://www.patyellow.com/directory/directory.asp
+
+- Best Practices in Android Development
+https://github.com/futurice/android-best-practices
