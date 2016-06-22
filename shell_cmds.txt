@@ -62,3 +62,7 @@ e.g. $ pbcopy
 
 - paste from the clipboard
 pbpaste
+
+- delete longest match of substring from front of $string
+${string##substring}
+e.g. The * is a wildcard, matching everything. The command ${0##/*} prints the value of $0 unless it starts with a forward slash, in which case it prints nothing.

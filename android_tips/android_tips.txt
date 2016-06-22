@@ -8,3 +8,9 @@ https://github.com/chrisbanes/PhotoView
 
 - PhotoDraweeView : PhotoView associated with SimpleDraweeView of Fresco image library
 https://github.com/ongakuer/PhotoDraweeView
+
+- Best Practices in Android Development
+https://github.com/futurice/android-best-practices
+
+- List of Android UI/UX Libraries
+https://github.com/wasabeef/awesome-android-ui

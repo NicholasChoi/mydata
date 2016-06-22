@@ -1,6 +1,6 @@
 Hyeok_profile_image.png
 environments.txt
 logininfo.txt
-setting_files/hyperconnect/.gradle/
-setting_files/hyperconnect/.m2/
-setting_files/hyperconnect/azarkey/
+mac_os_setting_files/hyperconnect/.gradle/
+mac_os_setting_files/hyperconnect/.m2/
+mac_os_setting_files/hyperconnect/azarkey/
