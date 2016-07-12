@@ -53,5 +53,5 @@ if test "$(/Applications/Karabiner.app/Contents/Library/bin/karabiner selected)"
     else /Applications/Karabiner.app/Contents/Library/bin/karabiner select 0;
 fi
 
-- A Collection of Alfred 2 Workflows
+- a collection of Alfred 2 workflows
 https://github.com/zenorocha/alfred-workflows

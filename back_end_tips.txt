@@ -1,0 +1,2 @@
+- a checklist for DevOps: what to monitor
+https://github.com/andromedarabbit/what-to-monitor/tree/develop

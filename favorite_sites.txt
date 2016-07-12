@@ -28,3 +28,6 @@ http://www.ipnomics.co.kr/
 
 - 특허 관련 기관 사이트 링크
 http://www.patyellow.com/directory/directory.asp
+
+- various helpful links for programmers (The Awesome List)
+https://github.com/sindresorhus/awesome
