@@ -1,0 +1,11 @@
+- Twilio : enabling phones, VoIP, and messaging to be embedded into web, desktop, and mobile software
+https://www.twilio.com/
+
+- 비프로그래머를 위한 strings.xml 편집기
+http://jungilhan.github.io/strings-xml-editor/
+
+- Fabric : real-time alert integration for an app (formerly known as Crashlytics)
+https://fabric.io
+
+- Branch : deep linking integration 
+https://branch.io/
