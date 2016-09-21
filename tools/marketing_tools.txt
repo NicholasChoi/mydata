@@ -6,3 +6,10 @@ https://www.appboy.com/solutions/
 
 - Twilio : enabling phones, VoIP, and messaging to be embedded into web, desktop, and mobile software
 https://www.twilio.com/
+
+- sift science : real-time automated fraud prevention
+https://siftscience.com/
+
+- Zendesk : customer service system
+https://www.zendesk.com/
+http://www.trueinfo.co.kr/zendesk.php

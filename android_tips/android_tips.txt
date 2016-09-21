@@ -14,3 +14,6 @@ https://github.com/futurice/android-best-practices
 
 - List of Android UI/UX Libraries
 https://github.com/wasabeef/awesome-android-ui
+
+- Guidelines for Android Projects and Codes
+https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md
