@@ -66,3 +66,9 @@ pbpaste
 - delete longest match of substring from front of $string
 ${string##substring}
 e.g. The * is a wildcard, matching everything. The command ${0##/*} prints the value of $0 unless it starts with a forward slash, in which case it prints nothing.
+
+- 최근에 실행된 명령에서 일부를 치환하기
+^(old string)^(new string)
+e.g. $ ls text.c
+     ......
+     $ ^text^test
