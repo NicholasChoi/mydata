@@ -14,11 +14,5 @@ https://siftscience.com/
 https://www.zendesk.com/
 http://www.trueinfo.co.kr/zendesk.php
 
-- translation management systems
-OneSky : app translation services & translation management system
-https://www.oneskyapp.com/
-Crowdin : localization management platform
-https://crowdin.com/
-
 - Mechanical Turk : ask workers to complete human intelligence tasks and get results
 https://requester.mturk.com/

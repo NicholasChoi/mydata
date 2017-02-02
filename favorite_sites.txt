@@ -7,27 +7,5 @@ https://www.producthunt.com/
 - computational knowledge search engine
 https://www.wolframalpha.com/
 
-- KOTRA 해외비지니스 정보포털
-http://www.globalwindow.org/
-
-- KOTRA 해외비지니스 정보포털 내의 특정 국가에 대한 지식재산권 정보
-1) 상단 메인바의 "국가정보" -> 국가 선택 -> "III. 무역" 섹션의 "지식재산권"
-2) 또는, 구글에서 "in:www.globalwindow.org (국가명) 지식재산권" 검색
-
-- 해외출원 가이드
-http://www.newip.biz/foreign_apply/fcountry_guide.php
-
-- 마드리드 국제상표 가입국
-http://www.newip.biz/foreign_apply/madrid_clist.php
-
-- 국제 지재권 분쟁 정보
-http://www.ip-navi.or.kr/
-
-- 지재권 관련 트렌드 정보
-http://www.ipnomics.co.kr/
-
-- 특허 관련 기관 사이트 링크
-http://www.patyellow.com/directory/directory.asp
-
 - various helpful links for programmers (The Awesome List)
 https://github.com/sindresorhus/awesome
