@@ -24,3 +24,8 @@ CTRL-A  // Increment the number or character at or after the cursor.
 v (visual mode) -> i{wpbB<["'}  // Select a range.
 v (visual mode) -> o  // Move cursor to the other end.
 CTRL-N  // Complete the current word. See ":help i_CTRL-N" for details.
+1G
+G
+CTRL-End
+I
+A
