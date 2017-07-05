@@ -23,6 +23,9 @@ http://www.ipnomics.co.kr/
 - 특허 관련 기관 사이트 링크
 http://www.patyellow.com/directory/directory.asp
 
+- 한국 IP 검색 (미국, 일본, 호주, 캐나다, 유럽의 상표 검색도 가능)
+http://kportal.kipris.or.kr/kportal/search/total_search.do
+
 - 중국 특허청 사이트
 http://www.sipo.gov.cn/
 
@@ -43,3 +46,108 @@ http://sbsq.saic.gov.cn:9080/tmoas/agentInfo_getAgentDljg.xhtml
 - 중국 상표 검색 페이지(중국 상표국 사이트로부터 도달 가능)
 http://sbcx.saic.gov.cn:9080/tmois/wscxsy_getIndex.xhtml
 http://sbcx.saic.gov.cn:9080/tmois/wszhcx_getZhcx.xhtml
+
+- 대만 상표 검색
+http://tmsearch.tipo.gov.tw/TIPO_DRE/BasicIPO.html
+
+- 싱가포르 IP 검색
+https://www.ip2.sg/RPS/WP/CM/SearchSimpleP.aspx?SearchCategory=TM
+
+- 일본 IP 검색(일어)
+https://www.j-platpat.inpit.go.jp/web/all/top/BTmTopPage
+
+- 일본 IP 검색(영어)
+https://www.j-platpat.inpit.go.jp/web/all/top/BTmTopEnglishPage
+
+- 인도 특허 검색
+http://ipindiaservices.gov.in/publicsearch
+
+- 인도 상표 검색
+https://ipindiaonline.gov.in/tmrpublicsearch/frmmain.aspx
+
+- 인도 디자인 검색
+http://ipindiaservices.gov.in/designsearch/
+
+- 홍콩 상표 검색
+http://ipsearch.ipd.gov.hk/trademark/jsp/main.jsp
+
+- 멕시코 상표 검색
+http://marcanet.impi.gob.mx/marcanet/
+
+- 미국 특허 검색
+https://www.uspto.gov/patents-application-process/search-patents
+
+- 미국 상표 검색
+http://tmsearch.uspto.gov/
+
+- 캐나다 특허 검색
+http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/search/basic.html
+
+- 캐나다 상표 검색
+http://www.ic.gc.ca/app/opic-cipo/trdmrks/srch/home?lang=eng
+
+- 아일랜드 특허 검색
+https://www.patentsoffice.ie/en/Patents/Patent-Searching/Patent-Register-Database/Patent-Searching.html
+
+- 아일랜드 상표 검색
+https://www.patentsoffice.ie/en/Trade-Marks/Trade-Mark-Searching/
+
+- 아일랜드 디자인 검색
+https://www.patentsoffice.ie/en/Designs/Design-Searching/
+
+- 영국 상표 검색
+https://www.gov.uk/search-for-trademark
+
+- 덴마크 특허 검색
+http://onlineweb.dkpto.dk/pvsonline/patent?action=1&subAction=front&language=GB
+
+- 덴마크 상표 검색
+http://onlineweb.dkpto.dk/pvsonline/varemaerke?action=201&subAction=front&language=GB
+
+- 덴마크 디자인 검색
+http://onlineweb.dkpto.dk/pvsonline/design?action=301&subAction=front&language=GB
+
+- 독일 특허 검색
+https://register.dpma.de/DPMAregister/pat/uebersicht
+
+- 독일 상표 검색
+https://register.dpma.de/DPMAregister/marke/uebersicht
+
+- 독일 디자인 검색
+https://register.dpma.de/DPMAregister/gsm/uebersicht
+
+- 프랑스 특허 검색
+http://bases-brevets.inpi.fr/en/home.html
+
+- 프랑스 상표 검색
+https://bases-marques.inpi.fr/
+
+- 호주 특허 검색
+http://pericles.ipaustralia.gov.au/ols/auspat/
+
+- 호주 상표 검색
+https://search.ipaustralia.gov.au/trademarks/search/quick
+
+- 호주 디자인 검색
+http://pericles.ipaustralia.gov.au/adds2/adds.adds_simple_search.paint_simple_search
+
+- 국제등록상표(마드리드, Madrid) 검색
+http://www.wipo.int/madrid/monitor/en/index.jsp
+
+- 유럽공동체(EU) 상표 검색
+https://euipo.europa.eu/eSearch/#advanced/trademarks
+
+- 유럽공동체(EU) 디자인 검색
+https://euipo.europa.eu/eSearch/#advanced/designs
+
+- 각국 특허청 사이트 링크 모음
+http://www.wipo.int/directory/en/urls.jsp
+http://www.kipo.go.kr/kpo/user.tdf?a=user.html.HtmlApp&c=20001&catmenu=m06_09_01
+https://www.tmdn.org/tmview/welcome.html
+
+- 글로벌 상표 검색
+http://www.wipo.int/branddb/en/
+https://www.tmdn.org/tmview/welcome
+
+- 글로벌 디자인 검색
+https://www.tmdn.org/tmdsview-web/welcome
