@@ -14,6 +14,10 @@ http://www.wipo.int/pct/ko/pct_contracting_states.html
 - 마드리드 국제상표 가입국
 http://www.wipo.int/madrid/en/members
 
+- 마드리드 상품 명칭 도우미 사이트(Madrid Goods and Services, MGS)
+  : 수용 여부 확인 기능 및 상품 명칭 번역 기능 등을 제공하고 있음.
+https://webaccess.wipo.int/mgs/?lang=kr
+
 - 국제 지재권 분쟁 정보
 http://www.ip-navi.or.kr/
 
