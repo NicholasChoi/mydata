@@ -17,3 +17,6 @@ https://github.com/wasabeef/awesome-android-ui
 
 - Guidelines for Android Projects and Codes
 https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md
+
+- List of Android Studio Plugins
+https://github.com/balsikandar/Android-Studio-Plugins

@@ -88,6 +88,9 @@ https://www.uspto.gov/patents-application-process/search-patents
 - 미국 상표 검색
 http://tmsearch.uspto.gov/
 
+- 미국 상표 출원 절차에 대한 설명
+http://www.newip.biz/interest/?type=view&gkind=12&interestkind=56&index=831
+
 - 캐나다 특허 검색
 http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/search/basic.html
 
@@ -162,3 +165,6 @@ https://www.tmdn.org/tmdsview-web/welcome
 
 - 세계 각국의 the Best Law Firms
 http://www.legal500.com/
+
+- 대한민국 법령의 영문 번역문
+https://elaw.klri.re.kr/
