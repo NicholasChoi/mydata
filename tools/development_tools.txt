@@ -15,3 +15,6 @@ OneSky : app translation services & translation management system
 https://www.oneskyapp.com/
 Crowdin : localization management platform
 https://crowdin.com/
+
+- Codota : which understands the world's code and provides you with code suggestion
+https://www.codota.com/

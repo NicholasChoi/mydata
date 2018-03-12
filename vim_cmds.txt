@@ -30,3 +30,5 @@ G
 CTRL-End
 I
 A
+f
+F
