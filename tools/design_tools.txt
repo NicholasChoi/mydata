@@ -19,3 +19,6 @@ https://zeplin.io/
 이미지 리소스 추출 및 컬러, 폰트, 간격 등의 보여주는 용도로 기존 PPT 문서를 대체 가능함.
 Slack과 연동 가능함.
 프로젝트 관련자 모두가 사용함.
+
+- online photo editor
+https://pixlr.com/editor/

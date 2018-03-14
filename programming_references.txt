@@ -1,0 +1,29 @@
+- Accessing Google Spreadsheets in Python Using Gspread
+http://www.indjango.com/access-google-sheets-in-python-using-gspread/
+
+- 웹개발자 변정훈씨의 코드 저장소
+https://github.com/outsideris?tab=repositories
+
+- Vim Registers: The Basics and Beyond
+http://www.brianstorti.com/vim-registers/
+
+- various helpful links for programmers (The Awesome List)
+https://github.com/sindresorhus/awesome
+
+- A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev
+https://github.com/ripienaar/free-for-dev
+
+- Web Programming Language References
+https://www.w3schools.com/
+
+- Programming Language Tutorials
+https://www.tutorialspoint.com/tutorialslibrary.htm
+
+- JSON Formatter & Validator
+https://jsonformatter.curiousconcept.com/
+
+- Java Tutorials
+https://docs.oracle.com/javase/tutorial/
+
+- Java Programming Basics Course
+https://www.udacity.com/course/java-programming-basics--ud282

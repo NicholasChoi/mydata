@@ -1,11 +1,5 @@
-- online photo editor
-https://pixlr.com/editor/
-
 - news & collections of tech
 https://www.producthunt.com/
 
 - computational knowledge search engine
 https://www.wolframalpha.com/
-
-- various helpful links for programmers (The Awesome List)
-https://github.com/sindresorhus/awesome

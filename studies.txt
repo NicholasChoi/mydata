@@ -1,0 +1,6 @@
+- Ferns를 이용한 영상 내에서의 Object Detection
+http://darkpgmr.tistory.com/90
+
+- 대기행렬이론에 대한 설명
+http://secom.hanbat.ac.kr/or/chapter7/right04.html
+http://portal.changwon.ac.kr/homePost/download.do?postfileno=6435

@@ -20,3 +20,15 @@ https://github.com/ribot/android-guidelines/blob/master/project_and_code_guideli
 
 - List of Android Studio Plugins
 https://github.com/balsikandar/Android-Studio-Plugins
+
+- Android에서 Uri와 file path 간의 변환
+http://ccdev.tistory.com/23
+
+- Android Dialog의 각종 속성들 정리
+http://arabiannight.tistory.com/entry/347
+
+- Getting Started With ReactiveX on Android
+https://code.tutsplus.com/tutorials/getting-started-with-reactivex-on-android--cms-24387
+
+- Java Code Examples for android.animation.ObjectAnimator
+https://www.programcreek.com/java-api-examples/index.php?api=android.animation.ObjectAnimator

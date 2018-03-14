@@ -168,3 +168,12 @@ http://www.legal500.com/
 
 - 대한민국 법령의 영문 번역문
 https://elaw.klri.re.kr/
+
+- WIPO의 Domain Name Dispute Resolution
+http://www.wipo.int/amc/en/domains/
+
+- WIPO의 Online Complaint Filing Form Complaints under the Uniform Domain Name Dispute Resolution Policy
+https://www3.wipo.int/amc-forms/en/udrp/eudrpcomplaint.jsp
+
+- SMAS-IP : 중동 지역을 커버하는 IP법률사무소
+http://www.smas-ip.com/
