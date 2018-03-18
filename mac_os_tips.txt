@@ -55,3 +55,6 @@ fi
 
 - a collection of Alfred 2 workflows
 https://github.com/zenorocha/alfred-workflows
+
+- enabling to use Vim on any input boxes
+https://github.com/cknadler/vim-anywhere
