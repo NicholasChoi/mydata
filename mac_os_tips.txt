@@ -25,6 +25,12 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 - brew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+- python
+brew install python@2
+pip install --upgrade pip setuptools
+brew install python
+pip3 install --upgrade pip setuptools wheel
+
 - tig
 brew install tig
 
