@@ -64,3 +64,8 @@ https://github.com/zenorocha/alfred-workflows
 
 - enabling to use Vim on any input boxes
 https://github.com/cknadler/vim-anywhere
+
+- how to copy the path of a file or folder to the clipboard in Finder
+1) Right-click at a file or folder.
+2) Hold down the OPTION key to reveal a menu item of "Copy (filename) as Pathname".
+3) Select the menu item of "Copy (filename) as Pathname".
