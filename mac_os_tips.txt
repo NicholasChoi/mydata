@@ -69,3 +69,45 @@ https://github.com/cknadler/vim-anywhere
 1) Right-click at a file or folder.
 2) Hold down the OPTION key to reveal a menu item of "Copy (filename) as Pathname".
 3) Select the menu item of "Copy (filename) as Pathname".
+
+- an AppleScript for extracting to the clipboard the Reference Number for intellectual property management from the path of the working folder in Finder
+(You can create a macOS Service using Automator with the following code.)
+on run {input, parameters}
+	
+	try
+		tell application "Finder" to set thePath to POSIX path of (target of window 1 as alias)
+		do shell script "awk 'match($0, /[PTDC][0-9]+\\/[^\\/]+/) {str = substr($0, RSTART, RLENGTH); sub(/\\//, \"\", str); printf \"%s\", str}' <<< " & quoted form of thePath & " | pbcopy"
+	on error
+		beep
+	end try
+	
+	return input
+end run
+
+- an AppleScript for copying to the clipboard the path of the working folder in Finder
+(You can create a macOS Service using Automator with the following code.)
+on run {input, parameters}
+	
+	try
+		tell application "Finder" to set the clipboard to POSIX path of (target of window 1 as alias)
+	on error
+		beep
+	end try
+	
+	return input
+end run
+
+- open a terminal from a folder in Finder
+right-click a file or folder in Finder -> "New iTerm2 Tab Here"
+
+- set to the List View mode in Finder
+Command + 2
+
+- move the cursor to the top item in the list view in Finder
+Option + Up Arrow
+
+- move the cursor to the bottom item in the list view in Finder
+Option + Down Arrow
+
+- an AppleScript expression to display a pop-up message dialog
+display dialog "Text to Be Displayed"

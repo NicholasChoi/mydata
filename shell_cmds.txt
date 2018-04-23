@@ -67,8 +67,110 @@ pbpaste
 ${string##substring}
 e.g. The * is a wildcard, matching everything. The command ${0##/*} prints the value of $0 unless it starts with a forward slash, in which case it prints nothing.
 
+- commands starting with '!'
+!! // run the last command again
+!(string) // run the last command starting with the string (e.g. $ !vi)
+!?(string) // run the last command containing the string (e.g. $ !?-al)
+
 - 최근에 실행된 명령에서 일부를 치환하기
 ^(old string)^(new string)
 e.g. $ ls text.c
      ......
      $ ^text^test
+
+- frequently used bash shortcuts
+(prerequisite for Option key to work properly: "iTerm2" -> "Preferences..." -> "Profiles" -> "Keys" -> select "Esc+" for "Left Option Key:")
+Ctrl + l // clear the screen
+Ctrl + b // move back one character
+Ctrl + f // move forward one character
+Ctrl + a // go to the beginning of line
+Ctrl + e // go to the end of line
+Option + b // move the cursor backward one word
+Option + f // move the cursor forward one word
+Ctrl + d // delete current character
+Ctrl + u // cut the whole line
+Ctrl + k // cut from the cursor to the end of line
+Option + d // cut the word from the cursor
+Option + Backspace // cut the word before the cursor
+Ctrl + y // paste the last cut text
+Option + y (after using Ctrl + y) // loop through the previously cut texts
+Option + . // loop through the arguments of the previous commands
+Ctrl + - // undo the last edit
+Ctrl + r // search through history as you type, repeat Ctrl + r to search further
+Ctrl + rr // search through history the last keyword again
+Ctrl + g // cancel the search and restore the last location in history
+Ctrl + xx // move the cursor between another position and the current position
+
+- copy the working directory path to the clipboard without the newline
+pwd | awk '{printf "%s", $0}' | pbcopy
+printf "`pwd`" | pbcopy
+echo -n $(pwd) | pbcopy
+
+- assign the quoted form of the path of file "text.txt" in the working directory to variable "thePath"
+thePath=\"$(echo -n $(pwd)/$(echo -n text.txt))\"    # "text.txt" can be auto-completed using Tab key
+
+- copy the last command to the clipboard
+history | tail -n 1 | awk 'match($0, / [^ ]+  /) {printf "%s", substr($0, RLENGTH + 1)}' | pbcopy
+
+- extract to the clipboard the Reference Number for intellectual property management from a path of a file or folder stored in the clipboard
+pbpaste | awk 'match($0, /[PTDC][0-9]+\/[^\/]+/) {str = substr($0, RSTART, RLENGTH); sub(/\//, "", str); printf "%s", str}' | pbcopy
+e.g. $ pbpaste
+     /Users/JohnDoe/Intellectual Properties/Applications/T140801/KR/02_1OA/OA.pdf%
+     $ pbpaste | awk 'match($0, /[PTDC][0-9]+\/[^\/]+/) {str = substr($0, RSTART, RLENGTH); sub(/\//, "", str); printf "%s", str}' | pbcopy
+     $ pbpaste
+     T140801KR%
+     $
+
+- differences among '<', '<<' and '<<<'
+'<' // redirection
+e.g. $ awk '{print}' < text.txt
+     ...
+     $
+'<<' // here document
+e.g. $ awk '{print}' << haha
+     heredoc> ha
+     heredoc> ha
+     heredoc> haha
+     ha
+     ha
+     $
+'<<<' // here string
+e.g. $ awk '{print}' <<< haha
+     haha
+     $ awk '{print}' <<< "haha"
+     haha
+     $ awk '{print}' <<< cat text.txt
+     ...
+     $
+
+- usage of command 'awk'
+e.g. $ cat text.txt
+     1 a
+     2 b
+     3 c
+     $ awk '{print $2}' text.txt
+     a
+     b
+     c
+     $ awk '/2+/ {print}' text.txt
+     2 b
+     $ echo aaa bbb ccc | awk 'match($0, /b+/) {printf "%s", substr($0, RSTART, RLENGTH)}'
+     bbb%
+     $ echo aaa_bbb_ccc | awk -F '_' '{print $1$2$3}'
+     aaabbbccc
+     $
+
+- 'awk'의 용법 중에서 "awk PATTERN {ACTION} FILE" 포맷의 PATTERN 부분에 대해
+awk 'EXPRESSION {COMMAND} FILE    # FILE 내의 각 행마다 EXPRESSION을 만족하는지 여부를 검사하고 EXPRESSION을 만족하는 각 행에 대해 COMMAND를 수행함.
+awk 'EXPRESSION1,EXPRESSION2 {COMMAND} FILE    # FILE 내의 각 행을 순차적으로 검사하면서 EXPRESSION1을 가장 먼저 만족하는 제1행을 찾아냄. 만약 제1행이 존재하지 않는다면 아무 행에 대하여도 COMMAND를 수행하지 않음. 만약 제1행이 존재한다면 제1행부터 각 행을 순차적으로 검사하면서 EXPRESSION2를 가장 먼저 만족하는 제2행을 찾아냄. 만약 제2행이 존재하지 않는다면 제1행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함. 만약 제2행이 존재한다면 제1행부터 제2행까지의 각 행에 대해 COMMAND를 수행하고, 제2행의 다음 행부터 각 행을 순차적으로 검사하면서 EXPRESSION1을 가장 먼저 만족하는 새로운 제1행을 찾아내는 단계부터 반복함.
+e.g. awk '0,0 {COMMAND}' FILE    # EXPRESSION1을 만족하는 행이 없으므로 아무 행에 대하여도 COMMAND를 수행하지 않음.
+     awk '0,1 {COMMAND}' FILE    # EXPRESSION1을 만족하는 행이 없으므로 아무 행에 대하여도 COMMAND를 수행하지 않음.
+     awk '1,0 {COMMAND}' FILE    # 첫번째 행이 EXPRESSION1을 가장 먼저 만족하고 EXPRESSION2를 만족하는 행이 없으므로 첫번째 행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함.
+     awk '1,1 {COMMAND}' FILE    # 첫번째 행이 EXPRESSION1 및 EXPRESSION2를 가장 먼저 만족하므로 첫번째 행에 대해 COMMAND를 수행하고, 두번째 행부터 마지막 행까지의 각 행도 EXPRESSION1 및 EXPRESSION2를 만족하므로 두번째 행부터 마지막 행까지의 각 행에 대하여도 COMMAND를 수행함. 결국 첫번째 행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함.
+     awk 'NR!=1,0 {COMMAND}' FILE    # 행의 순번이 1과 같지 않다는 의미의 EXPRESSION1을 두번째 행이 가장 먼저 만족하고 EXPRESSION2를 만족하는 행이 없으므로 두번째 행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함.
+     awk 'NR!=1,1 {COMMAND}' FILE    # 행의 순번이 1과 같지 않다는 의미의 EXPRESSION1을 두번째 행이 가장 먼저 만족하고 두번째 행이 EXPRESSION2도 만족하므로 두번째 행에 대해 COMMAND를 수행하고, 세번째 행부터 마지막 행까지의 각 행도 EXPRESSION1 및 EXPRESSION2를 만족하므로 세번째 행부터 마지막 행까지의 각 행에 대하여도 COMMAND를 수행함. 결국 두번째 행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함.
+
+- usage of command 'sed'
+e.g. $ echo hihi | sed 's/hi/hello/g'
+     hellohello
+     $
