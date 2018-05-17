@@ -106,6 +106,9 @@ https://www.patentsoffice.ie/en/Trade-Marks/Trade-Mark-Searching/
 - 아일랜드 디자인 검색
 https://www.patentsoffice.ie/en/Designs/Design-Searching/
 
+- 영국 특허 검색
+https://www.gov.uk/search-for-patent
+
 - 영국 상표 검색
 https://www.gov.uk/search-for-trademark
 
