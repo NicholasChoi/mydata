@@ -180,3 +180,6 @@ https://www3.wipo.int/amc-forms/en/udrp/eudrpcomplaint.jsp
 
 - SMAS-IP : 중동 지역을 커버하는 IP법률사무소
 http://www.smas-ip.com/
+
+- 특허청 고시 상품 명칭 조회
+http://www.kipo.go.kr/kpo/user.tdf?a=user.html.HtmlApp&c=31064&catmenu=m06_07_03_01&version=11
