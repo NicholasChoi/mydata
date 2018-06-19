@@ -1,6 +1,13 @@
 * Frequently Used Vim Commands
+0
+^
+$
+g0
+g$
 m{a-zA-Z}
 `{a-z}
+``
+`.
 q{0-9a-zA-Z"}
 @{0-9a-z".=*}
 @@
@@ -27,6 +34,7 @@ v (visual mode) -> o  // Move cursor to the other end.
 CTRL-N  // Complete the current word. See ":help i_CTRL-N" for details.
 1G
 G
+gg
 CTRL-End
 I
 A
