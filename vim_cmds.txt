@@ -1,6 +1,7 @@
 * Frequently Used Vim Commands
 0
 ^
+g_
 $
 g0
 g$
@@ -8,6 +9,14 @@ m{a-zA-Z}
 `{a-z}
 ``
 `.
+w
+W
+e
+E
+b
+B
+{
+}
 q{0-9a-zA-Z"}
 @{0-9a-z".=*}
 @@
@@ -36,7 +45,12 @@ CTRL-N  // Complete the current word. See ":help i_CTRL-N" for details.
 G
 gg
 CTRL-End
+H
+M
+L
 I
 A
 f
 F
+CTRL-G
+g CTRL-G
