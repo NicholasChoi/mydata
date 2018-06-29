@@ -48,9 +48,14 @@ CTRL-End
 H
 M
 L
+CTRL-D
+CTRL-U
+CTRL-E
+CTRL-Y
 I
 A
 f
 F
 CTRL-G
 g CTRL-G
+:%s/{pattern}//gn  // count number of matches of a pattern
