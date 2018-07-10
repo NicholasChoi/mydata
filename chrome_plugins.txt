@@ -1,0 +1,20 @@
+- Vimium
+Custom key mappings:
+# Insert your preferred key mappings here.
+unmap gg
+map 1G scrollToTop
+unmap b
+map P openCopiedUrlInCurrentTab
+map p openCopiedUrlInNewTab
+map H previousTab
+map L nextTab
+map J goBack
+map K goForward
+map J goBack
+map K goForward
+map ㅓ scrollDown
+map ㅏ scrollUp
+
+- Nimbus Screenshot & Screen Video Recorder
+
+- Writefull

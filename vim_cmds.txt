@@ -3,8 +3,12 @@
 ^
 g_
 $
+[count]| (bar)  // go to the [count]'th column in the current line
 g0
+gm
 g$
+gk
+gj
 m{a-zA-Z}
 `{a-z}
 ``
@@ -56,6 +60,8 @@ I
 A
 f
 F
+;
+,
 CTRL-G
 g CTRL-G
 :%s/{pattern}//gn  // count number of matches of a pattern
