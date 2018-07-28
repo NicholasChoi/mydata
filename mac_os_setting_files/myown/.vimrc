@@ -63,5 +63,20 @@ set noswapfile
 "      "ayy => stored both to "a and ""
 set clipboard=unnamed
 
+" Use the system clipboard for ordinary yank, delete, change and put
+" operations if "set clipboard=unnamed" in the above is NOT supported.
+" nnoremap y "+y
+" vnoremap y "+y
+" nnoremap x "+x
+" vnoremap x "+x
+" nnoremap d "+d
+" vnoremap d "+d
+" nnoremap c "+c
+" vnoremap c "+c
+" nnoremap p "+p
+" vnoremap p "+p
+" nnoremap P "+P
+" vnoremap P "+P
+
 " Display line numbers
 "set nu
