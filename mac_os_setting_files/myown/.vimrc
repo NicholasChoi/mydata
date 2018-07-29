@@ -119,11 +119,9 @@ inoremap        <Leader><  <
 inoremap <expr> >          strpart(getline('.'), col('.')-1, 1) == ">" ? "\<Right>" : ">"
 
 inoremap <expr> '          strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
-inoremap        '<CR>      '<CR>'<Esc>O
 inoremap        <Leader>'  '
 
 inoremap <expr> "          strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
-inoremap        "<CR>      "<CR>"<Esc>O
 inoremap        <Leader>"  "
 
 inoremap        /*<CR>     /*<CR>*/<Esc>O
