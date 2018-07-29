@@ -14,7 +14,7 @@ autocmd! bufwritepost .vimrc source %
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
 set pastetoggle=<F2>
 
-" easier moving of code blocks
+" Easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
 vnoremap < <gv
@@ -63,20 +63,67 @@ set noswapfile
 "      "ayy => stored both to "a and ""
 set clipboard=unnamed
 
-" Use the system clipboard for ordinary yank, delete, change and put
-" operations if "set clipboard=unnamed" in the above is NOT supported.
-" nnoremap y "+y
-" vnoremap y "+y
-" nnoremap x "+x
-" vnoremap x "+x
-" nnoremap d "+d
-" vnoremap d "+d
-" nnoremap c "+c
-" vnoremap c "+c
-" nnoremap p "+p
-" vnoremap p "+p
-" nnoremap P "+P
-" vnoremap P "+P
+" If "set clipboard=unnamed" in the above is NOT supported, the following key
+" mappings can be used to use the system clipboard for ordinary yank, delete,
+" change and put operations.
+"nnoremap y "+y
+"vnoremap y "+y
+"nnoremap x "+x
+"vnoremap x "+x
+"nnoremap d "+d
+"vnoremap d "+d
+"nnoremap c "+c
+"vnoremap c "+c
+"nnoremap p "+p
+"vnoremap p "+p
+"nnoremap P "+P
+"vnoremap P "+P
 
 " Display line numbers
 "set nu
+
+" Use a non-blinking block cursor for all modes
+set guicursor=a:block-blinkon0
+
+" Paste from the clipboard when CTRL-V is pressed in Insert mode or
+" Command-line mode on Windows platforms.
+if has("win32")
+  inoremap <C-V> <C-R>+
+  cnoremap <C-V> <C-R>+
+endif
+
+" Apply a font on Windows platforms
+if has("win32")
+  set guifont=굴림체:h16:cHANGEUL:qDRAFT
+endif
+
+" Automatically append closing characters
+inoremap        [          []<Left>
+inoremap        [<CR>      [<CR>]<Esc>O
+inoremap        <Leader>[  [
+inoremap <expr> ]          strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+
+inoremap        {          {}<Left>
+inoremap        {<CR>      {<CR>}<Esc>O
+inoremap        <Leader>{  {
+inoremap <expr> }          strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+
+inoremap        (          ()<Left>
+inoremap        (<CR>      (<CR>)<Esc>O
+inoremap        <Leader>(  (
+inoremap <expr> )          strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+
+inoremap        <          <><Left>
+inoremap        <<CR>      <<CR>><Esc>O
+inoremap        <Leader><  <
+inoremap <expr> >          strpart(getline('.'), col('.')-1, 1) == ">" ? "\<Right>" : ">"
+
+inoremap <expr> '          strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+inoremap        '<CR>      '<CR>'<Esc>O
+inoremap        <Leader>'  '
+
+inoremap <expr> "          strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
+inoremap        "<CR>      "<CR>"<Esc>O
+inoremap        <Leader>"  "
+
+inoremap        /*<CR>     /*<CR>*/<Esc>O

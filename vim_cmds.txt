@@ -42,9 +42,10 @@ CTRL-W c
 "{0-9a-zA-Z":.%*/}p
 :h registers
 CTRL-A  // Increment the number or character at or after the cursor.
-v (visual mode) -> i{wpbB<["'}  // Select a range.
-v (visual mode) -> o  // Move cursor to the other end.
-CTRL-N  // Complete the current word. See ":help i_CTRL-N" for details.
+v (Visual mode) -> i{wpbB<["'}  // Select a range.
+v (Visual mode) -> o  // Move cursor to the other end.
+(Insert mode) -> CTRL-N  // Complete the current word. See ":help i_CTRL-N" for details.
+(Insert mode) -> CTRL-R{0-9a-z"%#*+:.-=}  // paste from a register
 1G
 G
 gg
@@ -65,3 +66,5 @@ F
 CTRL-G
 g CTRL-G
 :%s/{pattern}//gn  // count number of matches of a pattern
+: (Command-line mode) -> CTRL-F  // Open the command-line window. Vim will be in Normal mode.
+: (Command-line mode) -> CTRL-R{0-9a-z"%#:-=.}  // paste from a register
