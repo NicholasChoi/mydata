@@ -76,7 +76,7 @@ on run {input, parameters}
 	
 	try
 		tell application "Finder" to set thePath to POSIX path of (target of window 1 as alias)
-		do shell script "awk 'match($0, /[PTDC][0-9]+\\/[^\\/]+/) {str = substr($0, RSTART, RLENGTH); sub(/\\//, \"\", str); printf \"%s\", str}' <<< " & quoted form of thePath & " | pbcopy"
+		do shell script "awk 'match($0, /(FW|RO)?[PTDC][0-9]+\\/[^\\/]+/) {str = substr($0, RSTART, RLENGTH); sub(/\\//, \"\", str); printf \"%s\", str}' <<< " & quoted form of thePath & " | pbcopy"
 	on error
 		beep
 	end try
