@@ -1,0 +1,30 @@
+- single quotes vs. double quotes
+A string with single quotes is taken as it is.
+:help literal-string
+e.g. echo '\"abc\"'    // echoes \"abc\"
+Characters with preceding backslashes in a string with double quotes are substituted with special characters.
+:help expr-"
+e.g. echo "\"abc\""    // echoes "abc"
+
+- string concatenation
+string1 .. string2
+:help expr6
+e.g. echo 'abc' .. "\"def\""    // echoes abc"def"
+
+- getting the index where a pattern matches in a string or a list
+match({expr}, {pat} [, {start} [, {count}]])
+A regular expression can also be used as the pattern.
+:help match()
+e.g. echo match('1a2a3a4a', 'a')    // echoes 1
+     echo match('1a2a3a4a', 'a', 2, 2)    // echoes 5
+     echo match(['a', 'b', 'c'], 'b')    // echoes 1
+     echo match([1, '2', 'm1'], '\a')    // echoes 2
+     echo match('abc123', '[0-9]')    // echoes 3
+
+- getting a substring which matches a regular expression in a string, or getting an item of which at least a part matches the regular expression in a list
+matchstr({expr}, {pat} [, {start} [, {count}]])
+:help matchstr()
+e.g. echo matchstr('abc123def456', '[0-9]\+')    // echoes 123
+     echo matchstr('abc123def456', '[0-9]\+', 4)    // echoes 23
+     echo matchstr('abc123def456', '[0-9]\+', 0, 2)    // echoes 23
+     echo matchstr([1, '2', 'm1'], '\a')    // echoes m1

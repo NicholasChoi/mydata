@@ -43,6 +43,11 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+" TABs are needed in specific kinds of documents
+"set tabstop=8
+"set shiftwidth=8
+"set noexpandtab
+
 " Make search case insensitive only when a pattern contains lowercase letters only
 set hlsearch
 set incsearch
@@ -92,36 +97,153 @@ if has("win32")
   cnoremap <C-V> <C-R>+
 endif
 
-" Apply a font on Windows platforms
+" Apply a font
 if has("win32")
   set guifont=굴림체:h16:cHANGEUL:qDRAFT
+else
+  set guifont=Menlo:h18
 endif
 
-" Automatically append closing characters
-inoremap        [          []<Left>
-inoremap        [<CR>      [<CR>]<Esc>O
-inoremap        <Leader>[  [
-inoremap <expr> ]          strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+" Disable the Input Method (IM)
+set noimd
 
-inoremap        {          {}<Left>
-inoremap        {<CR>      {<CR>}<Esc>O
-inoremap        <Leader>{  {
-inoremap <expr> }          strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+" Set a linespace
+set linespace=16
 
-inoremap        (          ()<Left>
-inoremap        (<CR>      (<CR>)<Esc>O
-inoremap        <Leader>(  (
-inoremap <expr> )          strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+" Make whitespaces visible
+set list
+set listchars=tab:\ \ 
+"set listchars=tab:>-
+"set listchars+=space:_
+"set listchars+=trail:@
 
-inoremap        <          <><Left>
-inoremap        <<CR>      <<CR>><Esc>O
-inoremap        <Leader><  <
-inoremap <expr> >          strpart(getline('.'), col('.')-1, 1) == ">" ? "\<Right>" : ">"
+" Automatic completion
+let snippets = []
 
-inoremap <expr> '          strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
-inoremap        <Leader>'  '
+" (The function below is currently unused)
+"function! AddSnippetOfWordWithRoundBracketedWords()
+"    let line = getline('.')
+"    let start = col('.') - 1
+"    while start > 0 && line[start - 1] != '('
+"        let start -= 1
+"    endwhile
+"    if start > 0
+"        let start -= 1
+"    endif
+"    while start > 0 && line[start - 1] =~ '\S'
+"        let start -= 1
+"    endwhile
+"    let extractedString = strpart(getline('.'), start, col('.') - 1 - start)
+"    if extractedString != ''
+"        let targetedSnippet = extractedString .. ')'
+"        if index(g:snippets, targetedSnippet) == -1
+"            call add(g:snippets, targetedSnippet)
+"        endif
+"    endif
+"    return 0
+"endfunction
 
-inoremap <expr> "          strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
-inoremap        <Leader>"  "
+" (The mapping below is currently unused) automatic completion to the word followed by a number in round brackets
+"inoremap $$ <Esc>maviW"cy?<Space><C-R>c\S*([0-9]\+\(,<Space>[0-9]\+\)*)<CR>lyf)`aviWpa
 
-inoremap        /*<CR>     /*<CR>*/<Esc>O
+function! AddSnippet()
+    let line = getline('.')
+    let start = col('.') - 1
+    " finding one of '(', ')', '{', '}', '[', ']', ':', ';' or a whitespace
+    while start > 0 && line[start - 1] !~ '[(){}[\]:;]\|\s'
+        let start -= 1
+    endwhile
+    let targetedSnippet = strpart(getline('.'), start, col('.') - 1 - start)
+    if strlen(targetedSnippet) >= 2 && index(g:snippets, targetedSnippet) == -1
+        call add(g:snippets, targetedSnippet)
+    endif
+    return 0
+endfunction
+
+function! AutoindentOnCR()
+    if strpart(getline('.'), col('.') - 2, 2) == '{}'
+        return "\<CR>\<Esc>O"
+    " (The two lines below are currently unused)
+    "elseif strpart(getline('.'), col('.') - 3, 2) == '/*'
+    "    return "\<CR>/\<Esc>O"
+    endif
+    return "\<CR>"
+endfunction
+
+function! CompleteSnippet(findstart, base)
+    if a:findstart
+        " locate the start of the word
+        let line = getline('.')
+        let start = col('.') - 1
+        " finding one of '(', ')', '{', '}', '[', ']', ':', ';' or a whitespace
+        while start > 0 && line[start - 1] !~ '[(){}[\]:;]\|\s'
+            let start -= 1
+        endwhile
+        return start
+    else
+        " find snippet candidates matching with the base
+        let candidates = []
+        for item in g:snippets
+            if item =~ '^' . a:base
+                call add(candidates, item)
+            endif
+        endfor
+        return candidates
+    endif
+endfunction
+set completefunc=CompleteSnippet
+
+function! AutocompleteOnTab()
+    if pumvisible() != 0
+        return "\<C-N>"
+    " if the cursor is on the first character of the line or the preceding character of the cursor is one of '(', ')', '{', '}', '[', ']', ':', ';' or a whitespace
+    elseif col('.') == 1 || strpart(getline('.'), col('.') - 2, 1) =~ '[(){}[\]:;]\|\s'
+        return "\<Tab>"
+    endif
+    return "\<C-X>\<C-U>"
+endfunction
+
+function! HandleKeyInput(key, whetherKeyInputIsWithMapleader = 0)
+    " (The line below is currently unused; <Tab> preceded by a word is to be used for a shortcut for automatic completion) if the key is one of ')', '}', ']', ':', ';', a carriage return or a whitespace
+    "if a:key =~ '[)}\]:;\r]\|\s'
+    " if the key is one of ')', '}', ']', ':', ';', a space or a carriage return
+    if a:key =~ '[)}\]:; \r]'
+        call AddSnippet()
+    endif
+
+    if a:key == '}' && a:whetherKeyInputIsWithMapleader != 0 && strpart(getline('.'), col('.') - 1, 1) == '}'
+        return "\<Right>"
+    elseif a:key == "\r"
+        return AutoindentOnCR()
+    elseif a:key == "\t"
+        return AutocompleteOnTab()
+    endif
+    return a:key
+endfunction
+
+inoremap <expr> ) HandleKeyInput(')')
+inoremap <expr> } HandleKeyInput('}')
+inoremap <expr> <Leader>} HandleKeyInput('}', 1)
+inoremap <expr> ] HandleKeyInput(']')
+inoremap <expr> : HandleKeyInput(':')
+inoremap <expr> ; HandleKeyInput(';')
+inoremap <expr> <CR> HandleKeyInput("\<CR>")
+inoremap <expr> <Space> HandleKeyInput("\<Space>")
+inoremap <expr> <Tab> HandleKeyInput("\<Tab>")
+
+function! AddSnippetUsingVisualBlock()
+    let tempContainer = @a
+    normal gv"ay
+    if index(g:snippets, @a) == -1
+        call add(g:snippets, @a)
+    endif
+    let @a = tempContainer
+endfunction
+
+vnoremap <silent> as :<C-U>call AddSnippetUsingVisualBlock()<CR>
+
+" Automatically append closing characters upon key inputs with mapleaders
+inoremap <Leader>{ {}<Left>
+inoremap <expr> <Leader>' strpart(getline('.'), col('.') - 1, 1) != "\'" ? "\'\'\<Left>" : "\<Right>"
+inoremap <expr> <Leader>" strpart(getline('.'), col('.') - 1, 1) != "\"" ? "\"\"\<Left>" : "\<Right>"
+inoremap <Leader><Leader> <Leader>
