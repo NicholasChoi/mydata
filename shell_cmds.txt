@@ -174,3 +174,14 @@ e.g. awk '0,0 {COMMAND}' FILE    # EXPRESSION1을 만족하는 행이 없으므�
 e.g. $ echo hihi | sed 's/hi/hello/g'
      hellohello
      $
+
+- open a file with MacVim
+mvim <fileName>
+e.g. $ mvim report.txt
+
+- open Finder for the current path
+open .
+
+- activate the topmost window of a specified application
+open -a <applicationName>
+e.g. $ open -a MacVim

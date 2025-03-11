@@ -1,0 +1,4 @@
+- URL of an image on Google Drive
+http://drive.google.com/uc?export=view&id=(FILEID extracted from the link to share)
+(an alternative) https://drive.usercontent.google.com/download?export=view&authuser=0&id=(FILEID extracted from the link to share)
+  // e.g. FILEID is "0B2nmJ_DIvLZtS0VGSnNRVlVTQTA" if the link to share is "https://drive.google.com/file/d/0B2nmJ_DIvLZtS0VGSnNRVlVTQTA/view?usp=sharing".

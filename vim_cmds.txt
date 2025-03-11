@@ -66,9 +66,50 @@ F
 ,
 CTRL-G
 g CTRL-G
-:%s/{pattern}//gn  // count number of matches of a pattern
+:%s/pattern//gn  // count number of matches of a pattern
 (Command-line mode, e.g. :, / or ?) -> CTRL-F  // Open the command-line window. Vim will be in Normal mode.
 (Command-line mode, e.g. :, / or ?) -> CTRL-R{0-9a-z"%#:-=.}  // paste from a register
 :e[dit]!  // discard any changes
 gn  // search forward and start Visual mode to select the match
 gv  // start Visual mode with the same area as the previous area
+(Insert mode) -> CTRL-V  // :help i_CTRL-V
+  // Become ready to insert a terminal code corresponding to a special key such as CR or Esc.
+:{range}normal {commands}  // e.g. :normal i1(CTRL-V)(CR)2(CTRL-V)(Esc)o3
+  // Keystrokes corresponding to the keys in the parentheses are needed in the example above.
+:execute {expr1}  // e.g. :execute "normal i1\<CR>2\<Esc>o3"
+:shell
+:!{cmd}  // e.g. :!ls
+:!!
+:ab {lhs} {rhs}  // e.g. :ab db database -> (Insert mode) -> db(Space, Tab or Esc)
+  // e.g. :ab db database -> (Command-line mode) -> db(Space)
+:help magic
+:help pattern-overview
+:redir @{register} | {Ex command} | redir END  // e.g. :redir @a | set gfn? | redir END
+  // capture an output of an Ex command to a register
+  // :help :redir    :help :bar
+(  // a sentence backward
+)  // a sentence forward
+CTRL-V -> (create a Visual block on multiple lines) -> I -> (insert a string) -> Esc
+  // insert the same string at the start of the block on every line of the block
+  // useful for commenting out multiple lines, for example
+  // :help v_b_I
+(Insert mode) -> CTRL-W  // delete the "word" before the cursor    :help i_CTRL-W
+:enew
+/pattern1.\{-}pattern2
+  // to find the shortest match of 0 or more of any character, ".\{-}" is used instead of ".*"
+  // e.g. /p1.\{-}p2 finds "p1p3p2" in "p1p3p2p2p2"
+  // cf. /p1.*p2 finds "p1p4p2p2p2" in "p1p3p2p2p2"
+:'<,'>s/\%Vpattern1/pattern2/g  // substitute matched strings inside the Visual area
+:%s/\%Vpattern1/pattern2/g  // substitute matched strings inside the Visual area
+:%s/pattern1/pattern2/gc  // to enable asking for confirmation on each substitution, flag "c" is additionally needed
+/pattern1\(pattern2\)\@=  // e.g. /p1\(p2\)\@= finds "p1" followed by "p2"    :help \@=
+/pattern1\zepattern2  // e.g. /P1\zeP2 finds "P1" followed by "P2"    :help \ze
+/pattern1\(pattern2\)\@!  // e.g. /p1\(p2\)\@! finds "p1" not followed by "p2"    :help \@!
+/\(pattern1\)\@<=pattern2  // e.g. /\(p1\)\@<=p2 finds "p2" preceded by "p1"    :help \@<=
+/pattern1\zspattern2  // e.g. /P1\zsP2 finds "P2" preceded by "P1"    :help \zs
+/\(pattern1\)\@<!pattern2  // e.g. /\(p1\)\@<!p2 finds "p2" not preceded by "p1"    :help \@<!
+CTRL-V -> (create a Visual block on multiple lines) -> g CTRL-A  // :help v_g_CTRL-A
+  // e.g. 1 1 1, one on each line -> 2(+1) 3(+2) 4(+3), one on each line
+  // e.g. 2 3 1, one on each line -> 3(+1) 5(+2) 4(+3), one on each line
+:%s/pattern/\=printf("%d", line('.'))/g  // substitute each matched string with its line number
+  // e.g. :%s/^[0-9]\+/\=printf("%d", line('.'))/g

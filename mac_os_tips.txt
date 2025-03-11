@@ -111,3 +111,28 @@ Option + Down Arrow
 
 - an AppleScript expression to display a pop-up message dialog
 display dialog "Text to Be Displayed"
+
+- toggle to show hidden files in Finder
+Command + Shift + .
+
+- get the properties of a window
+1) Run "Script Editor.app".
+2) Paste the following script into the script pane, and then press the "Run the Script" button.
+tell application "<applicationName>" to get properties of first window
+e.g. tell application "Google Chrome" to get properties of first window
+3) Check the result pane.
+
+- an AppleScript for use in Alfred Workflows to activate a specific tab in Chrome
+on alfred_script(q)
+    tell application "Google Chrome"
+        set i to 0
+        repeat with t in (tabs of first window)
+            set i to i + 1
+            if URL of t contains q then
+                set (active tab index of first window) to i
+                exit repeat
+            end if
+        end repeat
+    end tell
+    do shell script "open -a Google\\ Chrome"
+end alfred_script
