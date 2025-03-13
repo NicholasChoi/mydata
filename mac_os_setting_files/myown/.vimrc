@@ -118,7 +118,8 @@ set listchars=tab:\ \
 "set listchars+=trail:@
 
 " Automatic completion
-let snippets = []
+let snippetFrequencyDict = {}
+let snippetList = []
 
 " (The function below is currently unused)
 "function! AddSnippetOfWordWithRoundBracketedWords()
@@ -136,8 +137,8 @@ let snippets = []
 "    let extractedString = strpart(getline('.'), start, col('.') - 1 - start)
 "    if extractedString != ''
 "        let targetedSnippet = extractedString .. ')'
-"        if index(g:snippets, targetedSnippet) == -1
-"            call add(g:snippets, targetedSnippet)
+"        if index(g:snippetList, targetedSnippet) == -1
+"            call add(g:snippetList, targetedSnippet)
 "        endif
 "    endif
 "    return 0
@@ -149,15 +150,28 @@ let snippets = []
 function! AddSnippet()
     let line = getline('.')
     let start = col('.') - 1
-    " finding one of '(', ')', '{', '}', '[', ']', ':', ';' or a whitespace
+    " find one of '(', ')', '{', '}', '[', ']', ':', ';' or a whitespace
     while start > 0 && line[start - 1] !~ '[(){}[\]:;]\|\s'
         let start -= 1
     endwhile
     let targetedSnippet = strpart(getline('.'), start, col('.') - 1 - start)
-    if strlen(targetedSnippet) >= 2 && index(g:snippets, targetedSnippet) == -1
-        call add(g:snippets, targetedSnippet)
+    if strlen(targetedSnippet) >= 2
+        if g:snippetFrequencyDict->has_key(targetedSnippet) == v:false
+            let g:snippetFrequencyDict[targetedSnippet] = 1
+        else
+            let g:snippetFrequencyDict[targetedSnippet] += 1
+        endif
+        call RearrangeSnippetList(targetedSnippet)
     endif
     return 0
+endfunction
+
+function! RearrangeSnippetList(latestSnippet)
+    if g:snippetFrequencyDict->has_key(a:latestSnippet) == v:true
+        " rearrange the snippet list so that the latest input snippet is positioned as the first item in the snippet list and the remaining snippets are positioned after the first item in order by their frequency
+        let g:snippetList = g:snippetFrequencyDict->keys()->sort({firstIndex, secondIndex -> g:snippetFrequencyDict[secondIndex] - g:snippetFrequencyDict[firstIndex]})
+        eval g:snippetList->insert(g:snippetList->remove(g:snippetList->index(a:latestSnippet)))
+    endif
 endfunction
 
 function! AutoindentOnCR()
@@ -175,7 +189,7 @@ function! CompleteSnippet(findstart, base)
         " locate the start of the word
         let line = getline('.')
         let start = col('.') - 1
-        " finding one of '(', ')', '{', '}', '[', ']', ':', ';' or a whitespace
+        " find one of '(', ')', '{', '}', '[', ']', ':', ';' or a whitespace
         while start > 0 && line[start - 1] !~ '[(){}[\]:;]\|\s'
             let start -= 1
         endwhile
@@ -183,7 +197,7 @@ function! CompleteSnippet(findstart, base)
     else
         " find snippet candidates matching with the base
         let candidates = []
-        for item in g:snippets
+        for item in g:snippetList
             if item =~ '^' . a:base
                 call add(candidates, item)
             endif
@@ -234,8 +248,8 @@ inoremap <expr> <Tab> HandleKeyInput("\<Tab>")
 function! AddSnippetUsingVisualBlock()
     let tempContainer = @a
     normal gv"ay
-    if index(g:snippets, @a) == -1
-        call add(g:snippets, @a)
+    if index(g:snippetList, @a) == -1
+        call add(g:snippetList, @a)
     endif
     let @a = tempContainer
 endfunction
