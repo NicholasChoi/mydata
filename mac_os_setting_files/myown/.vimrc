@@ -118,8 +118,9 @@ set listchars=tab:\ \
 "set listchars+=trail:@
 
 " Automatic completion
-let snippetFrequencyDict = {}
+let snippetToFrequencyDict = {}
 let snippetList = []
+let baseToLatestSnippetDict = {}
 
 " (The function below is currently unused)
 "function! AddSnippetOfWordWithRoundBracketedWords()
@@ -156,22 +157,55 @@ function! AddSnippet()
     endwhile
     let targetedSnippet = strpart(getline('.'), start, col('.') - 1 - start)
     if strlen(targetedSnippet) >= 2
-        if g:snippetFrequencyDict->has_key(targetedSnippet) == v:false
-            let g:snippetFrequencyDict[targetedSnippet] = 1
+        if g:snippetToFrequencyDict->has_key(targetedSnippet) == v:false
+            let g:snippetToFrequencyDict[targetedSnippet] = 1
+            eval g:snippetList->add(targetedSnippet)
         else
-            let g:snippetFrequencyDict[targetedSnippet] += 1
+            let g:snippetToFrequencyDict[targetedSnippet] += 1
+            call RearrangeSnippetList(targetedSnippet)
         endif
-        call RearrangeSnippetList(targetedSnippet)
+        call UpdateBaseToLatestSnippetDict(targetedSnippet)
     endif
     return 0
 endfunction
 
-function! RearrangeSnippetList(latestSnippet)
-    if g:snippetFrequencyDict->has_key(a:latestSnippet) == v:true
-        " rearrange the snippet list so that the latest input snippet is positioned as the first item in the snippet list and the remaining snippets are positioned after the first item in order by their frequency
-        let g:snippetList = g:snippetFrequencyDict->keys()->sort({firstIndex, secondIndex -> g:snippetFrequencyDict[secondIndex] - g:snippetFrequencyDict[firstIndex]})
-        eval g:snippetList->insert(g:snippetList->remove(g:snippetList->index(a:latestSnippet)))
+function! RearrangeSnippetList(snippetOfWhichFrequencyIsUpdated)
+    " rearrange the snippet list so that the snippets in the list are positioned in order by their frequency
+    let indexOfSnippet = g:snippetList->index(a:snippetOfWhichFrequencyIsUpdated)
+
+    if indexOfSnippet == -1 || g:snippetToFrequencyDict->has_key(a:snippetOfWhichFrequencyIsUpdated) == v:false
+        return 1
     endif
+
+    let newIndexOfSnippet = indexOfSnippet
+    let frequencyOfSnippet = g:snippetToFrequencyDict[a:snippetOfWhichFrequencyIsUpdated]
+    while newIndexOfSnippet > 0 && g:snippetToFrequencyDict[g:snippetList[newIndexOfSnippet - 1]] < frequencyOfSnippet
+        let newIndexOfSnippet -= 1
+    endwhile
+    if newIndexOfSnippet != indexOfSnippet
+        eval g:snippetList->insert(g:snippetList->remove(indexOfSnippet), newIndexOfSnippet)
+    endif
+    return 0
+endfunction
+
+" (The function below is deprecated)
+"function! RearrangeSnippetList(latestSnippet)
+"    if g:snippetToFrequencyDict->has_key(a:latestSnippet) == v:true
+"        " rearrange the snippet list so that the latest input snippet is positioned as the first item in the snippet list and the remaining snippets are positioned after the first item in order by their frequency
+"        let g:snippetList = g:snippetToFrequencyDict->keys()->sort({firstIndex, secondIndex -> g:snippetToFrequencyDict[secondIndex] - g:snippetToFrequencyDict[firstIndex]})
+"        eval g:snippetList->insert(g:snippetList->remove(g:snippetList->index(a:latestSnippet)))
+"    endif
+"    return 0
+"endfunction
+
+function! UpdateBaseToLatestSnippetDict(latestSnippet)
+    " relate the substrings of the latest snippet to the latest snippet
+    let index = strlen(a:latestSnippet) - 1
+    while index > -1
+        let g:baseToLatestSnippetDict[a:latestSnippet[0:index]] = a:latestSnippet
+        let index -= 1
+    endwhile
+    return 0
 endfunction
 
 function! AutoindentOnCR()
@@ -202,6 +236,13 @@ function! CompleteSnippet(findstart, base)
                 call add(candidates, item)
             endif
         endfor
+        " position the latest snippet which begins with the base as the first item in the candidate list
+        if candidates->len() >= 2 && g:baseToLatestSnippetDict->has_key(a:base) == v:true
+            let indexOfLatestSnippet = candidates->index(g:baseToLatestSnippetDict[a:base])
+            if indexOfLatestSnippet != -1
+                eval candidates->insert(candidates->remove(indexOfLatestSnippet))
+            endif
+        endif
         return candidates
     endif
 endfunction
@@ -252,6 +293,7 @@ function! AddSnippetUsingVisualBlock()
         call add(g:snippetList, @a)
     endif
     let @a = tempContainer
+    return 0
 endfunction
 
 vnoremap <silent> as :<C-U>call AddSnippetUsingVisualBlock()<CR>
