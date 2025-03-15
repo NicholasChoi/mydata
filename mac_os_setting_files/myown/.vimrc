@@ -99,7 +99,7 @@ endif
 
 " Apply a font
 if has("win32")
-  set guifont=굴림체:h16:cHANGEUL:qDRAFT
+  set guifont=굴림체:h17:cHANGEUL:qDRAFT
 else
   set guifont=Menlo:h18
 endif
@@ -108,7 +108,11 @@ endif
 set noimd
 
 " Set a linespace
-set linespace=16
+if has("win32")
+    set linespace=2
+else
+    set linespace=16
+endif
 
 " Make whitespaces visible
 set list
@@ -236,7 +240,8 @@ function! CompleteSnippet(findstart, base)
                 call add(candidates, item)
             endif
         endfor
-        " position the latest snippet which begins with the base as the first item in the candidate list
+        " the snippets in the candidate list are already positioned in order by their frequency due to AddSnippet(), RearrangeSnippetList() and UpdateBaseToLatestSnippetDict()
+        " now position the latest input snippet which begins with the base as the first item in the candidate list
         if candidates->len() >= 2 && g:baseToLatestSnippetDict->has_key(a:base) == v:true
             let indexOfLatestSnippet = candidates->index(g:baseToLatestSnippetDict[a:base])
             if indexOfLatestSnippet != -1

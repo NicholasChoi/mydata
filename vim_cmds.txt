@@ -68,6 +68,8 @@ CTRL-G
 g CTRL-G
 :%s/pattern//gn  // count number of matches of a pattern
 (Command-line mode, e.g. :, / or ?) -> CTRL-F  // Open the command-line window. Vim will be in Normal mode.
+  // equivalent to (q:, q/ or q?)    :help c_CTRL-F
+  // after the command-line window is opened, (motion commands, :, /, ?, etc.) -> (CR or CTRL-C)
 (Command-line mode, e.g. :, / or ?) -> CTRL-R{0-9a-z"%#:-=.}  // paste from a register
 :e[dit]!  // discard any changes
 gn  // search forward and start Visual mode to select the match
