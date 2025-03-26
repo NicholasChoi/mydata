@@ -136,3 +136,6 @@ on alfred_script(q)
     end tell
     do shell script "open -a Google\\ Chrome"
 end alfred_script
+
+- restart the Touch Bar on a MacBook when it does not work normally
+sudo pkill TouchBarServer

@@ -3,7 +3,8 @@
 ^
 g_
 $
-[count]| (bar)  // go to the [count]'th column in the current line
+:help subject  // equivalent to :h subject    e.g. :help operator
+[count]|  // go to the [count]'th column in the current line    :help bar
 g0
 gm
 g$
@@ -40,13 +41,14 @@ CTRL-W c
 :reg
 "{0-9a-zA-Z":.%*/}yy  // 1-9: delete histories, 0: latest yank, A-Z: append to a-z
 "{0-9a-zA-Z":.%*/}p
-:h registers
+:help registers
 CTRL-A  // Increment the number or character at or after the cursor.
 CTRL-X  // Decrement the number or character at or after the cursor.
 (Visual mode, e.g. v) -> i{wpbB<["'}  // Select a range.
 (Visual mode, e.g. v) -> o  // Move cursor to the other end.
 (Insert mode, e.g. i, a or o) -> CTRL-N  // Complete the current word. See ":help i_CTRL-N" for details.
-(Insert mode, e.g. i, a or o) -> CTRL-R{0-9a-z"%#*+:.-=}  // paste from a register
+(Insert mode, e.g. i, a or o) -> CTRL-R{0-9a-z"%#*+/:.-=}  // paste from a register
+(Command-line mode, e.g. :, / or ?) -> CTRL-R{0-9a-z"%#*+/:.-=}  // paste from a register
 1G
 G
 gg
@@ -58,6 +60,7 @@ CTRL-D
 CTRL-U
 CTRL-E
 CTRL-Y
+zt  // scroll so that the current line appears as the topmost line
 I
 A
 f
@@ -70,7 +73,6 @@ g CTRL-G
 (Command-line mode, e.g. :, / or ?) -> CTRL-F  // Open the command-line window. Vim will be in Normal mode.
   // equivalent to (q:, q/ or q?)    :help c_CTRL-F
   // after the command-line window is opened, (motion commands, :, /, ?, etc.) -> (CR or CTRL-C)
-(Command-line mode, e.g. :, / or ?) -> CTRL-R{0-9a-z"%#:-=.}  // paste from a register
 :e[dit]!  // discard any changes
 gn  // search forward and start Visual mode to select the match
 gv  // start Visual mode with the same area as the previous area
@@ -101,6 +103,7 @@ CTRL-V -> (create a Visual block on multiple lines) -> I -> (insert a string) ->
   // to find the shortest match of 0 or more of any character, ".\{-}" is used instead of ".*"
   // e.g. /p1.\{-}p2 finds "p1p3p2" in "p1p3p2p2p2"
   // cf. /p1.*p2 finds "p1p4p2p2p2" in "p1p3p2p2p2"
+/\%Vpattern  // find inside the Visual area
 :'<,'>s/\%Vpattern1/pattern2/g  // substitute matched strings inside the Visual area
 :%s/\%Vpattern1/pattern2/g  // substitute matched strings inside the Visual area
 :%s/pattern1/pattern2/gc  // to enable asking for confirmation on each substitution, flag "c" is additionally needed
@@ -115,3 +118,51 @@ CTRL-V -> (create a Visual block on multiple lines) -> g CTRL-A  // :help v_g_CT
   // e.g. 2 3 1, one on each line -> 3(+1) 5(+2) 4(+3), one on each line
 :%s/pattern/\=printf("%d", line('.'))/g  // substitute each matched string with its line number
   // e.g. :%s/^[0-9]\+/\=printf("%d", line('.'))/g
+/[characters]  // find any one of the specified characters inside the square brackets
+  // e.g. /[0-9] finds any digit
+/[^characters]  // find any character except the specified characters inside the square brackets
+  // e.g. /[^0-9] finds any non-digit character
+  // e.g. repetition of /[^, ]\+\( [^, ]\+\)* finds "aaa", "bbb ccc" and then "ddd eee fff" in "aaa, bbb ccc, ddd eee fff"
+/pattern1\(pattern2\)*pattern3  // * means zero or more in a regular expression    :help /multi
+  // e.g. repetition of /ab*c finds "ac", "abc" and then "abbc" in "ac abc abbc"
+/pattern1\(pattern2\)\+pattern3  // + means one or more in a regular expression
+  // e.g. repetition of /ab\+c finds "abc" and then "abbc" in "ac abc abbc"
+/pattern1\(pattern2\)\?pattern3  // ? means zero or one in a regular expression
+  // e.g. repetition of /ab\?c finds "ac" and then "abc" in "ac abc abbc"
+/pattern1\(pattern2\|pattern3\|pattern4\)pattern5  // | corresponds to the logical OR operator
+  // e.g. repetition of /a\(b\|c\|d\)f finds "abf", "acf" and then "adf" in "abf acf adf aef"
+/pattern1\&pattern2\&pattern3  // e.g. /\<b\&.*e\>\&b\+\zs[0-9]\+ finds "222" in "aaa111eee bbb222eee bbb333ggg"
+  // find pattern3 that both of pattern1 and pattern2 also match at the beginning position of the found pattern3
+/\<pattern  // \< matches the beginning of a word    :help /ordinary-atom
+  // e.g. repetition of /\<[0-9]\+ finds "000" and then "222" in "000 aaa111 222bbb ccc"
+/pattern\>  // \> matches the end of a word
+  // e.g. repetition of /[a-z]\+\> finds "bbb" and then "ccc" in "000 aaa111 222bbb ccc"
+/\%>'mark1\%<'mark2pattern  // e.g. /\%>'a\%<'b[0-9]\+
+  // find after the position of mark1 and before the position of mark2
+  // the position of mark1 and the position of mark2 are excluded from the search
+:vimgrep /pattern/g filename  // e.g. :vimgrep /[0-9]\+/g %
+  // generate a list named "a quickfix list" which includes all the lines in a file where a pattern matches
+  // % as a file name is replaced with the name of the current file    :help c_%
+:help cmdline-special
+:copen -> (move the cursor) -> CR  // open the quickfix window and jump to a match
+:cclose
+:cfirst
+:clast
+:cnext  // equivalent to :cn
+:cprev  // equivalent to :cp    equivalent to :cN
+:g/pattern  // print all the lines (each line only once) where a pattern matches    e.g. :g/[0-9]\+
+(Visual mode) -> zf  // create a fold
+zd
+zD
+zE
+za
+zA
+zm
+zM
+zr
+zR
+zi
+zj
+zk
+[z
+]z
