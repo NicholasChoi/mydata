@@ -97,6 +97,9 @@ if has("win32")
   cnoremap <C-V> <C-R>+
 endif
 
+" Set encodings to display Korean characters in a file properly
+set fileencodings=utf-8,euc-kr
+
 " Apply a font
 if has("win32")
   set guifont=굴림체:h17:cHANGEUL:qDRAFT

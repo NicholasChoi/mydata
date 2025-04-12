@@ -19,11 +19,14 @@ https://nolboo.github.io/blog/2015/08/21/oh-my-zsh/
 
 - better auto-completion for oh-my-zsh
 http://stackoverflow.com/questions/24226685/have-zsh-return-case-insensitive-auto-complete-matches-but-prefer-exact-matches 
-Create a file ~/.oh-my-zsh/custom/better-completion.zsh (assuming you are using default paths for oh-my-zsh) with the following line
+Create a file ~/.oh-my-zsh/custom/better-completion.zsh (assuming you are using default paths for oh-my-zsh) with the following line.
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 - brew
+https://brew.sh/
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+(Alternatively, the following command can be used.)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 - python
 brew install python@2
@@ -42,7 +45,7 @@ brew install wget
 
 - vim (for getting latest version)
 brew install vim
-(restart terminal)
+(restarting the terminal is needed after the installation)
 
 - httpie
 brew install httpie
