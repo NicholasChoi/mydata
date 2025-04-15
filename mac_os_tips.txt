@@ -1,3 +1,15 @@
+- setting the preferred language
+System Settings -> General -> Language & Region -> Preferred Languages -> (set as "English    English - Primary")
+
+- enabling a tap on the trackpad to function as a click
+System Settings -> Trackpad -> Point & Click -> (turn on "Tap to click")
+
+- adjusting the keyboard settings
+System Settings -> Keyboard -> (set "Key repeat rate" as the fastest and "Delay until repeat" as the shortest)
+
+- changing the keyboard shortcuts of Google Chrome
+System Settings -> Keyboard -> Keyboard Shortcuts... -> App Shortcuts -> (add an item with "Google Chrome.app" as "Application", "Bookmark This Tab..." as "Menu Title", and "command + l" as "Keyboard Shortcut" and an item with "Google Chrome.app" as "Application", "Open Location..." as "Menu Title", and "command + d" as "Keyboard Shortcut")
+
 - enabling key repeats on a Mac
 defaults write -g ApplePressAndHoldEnabled 0
 
