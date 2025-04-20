@@ -1,0 +1,14 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap gg\nmap 1G scrollToTop\nunmap b\nmap P openCopiedUrlInCurrentTab\nmap p openCopiedUrlInNewTab\nmap H previousTab\nmap L nextTab\nmap J goBack\nmap K goForward",
+  "settingsVersion": "2.2.1",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://docs.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://codeanywhere.com/editor/*"
+    }
+  ]
+}

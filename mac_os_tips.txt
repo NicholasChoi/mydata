@@ -7,12 +7,23 @@ System Settings -> Trackpad -> Scroll & Zoom -> (turn off "Natural scrolling")
 System Settings -> Trackpad -> Scroll & Zoom -> (turn off "Zoom in or out")
 System Settings -> Trackpad -> More Gestures -> Swipe between pages -> (set as "Off")
 
+- changing the keyboard settings
+System Settings -> Keyboard -> (set "Key repeat rate" as the fastest and "Delay until repeat" as the shortest)
+System Settings -> Keyboard -> Text Input -> Input Sources -> Edit... -> (turn off "Correct spelling automatically")
+System Settings -> Keyboard -> Text Input -> Input Sources -> Edit... -> (turn off "Capitalize words automatically")
+System Settings -> Keyboard -> Text Input -> Input Sources -> Edit... -> (turn off "Add period with double-space")
+System Settings -> Keyboard -> Text Input -> Input Sources -> Edit... -> (turn off "Use smart quotes and dashes")
+
 - changing the keyboard shortcuts of Google Chrome
 System Settings -> Keyboard -> Keyboard Shortcuts... -> App Shortcuts -> (add an item with "Google Chrome.app" as "Application", "Bookmark This Tab..." as "Menu Title", and "command + l" as "Keyboard Shortcut")
 System Settings -> Keyboard -> Keyboard Shortcuts... -> App Shortcuts -> (add an item with "Google Chrome.app" as "Application", "Open Location..." as "Menu Title", and "command + d" as "Keyboard Shortcut")
 
-- adjusting the keyboard settings
-System Settings -> Keyboard -> (set "Key repeat rate" as the fastest and "Delay until repeat" as the shortest)
+- adding customized search engine settings in Google Chrome
+Google Chrome -> (open URL of "chrome://settings/searchEngines" to access "Manage search engines and site search" page) -> Site search -> Add ->  (add an item with "Google US" as "Name", "g" as "Shortcut", and "https://www.google.com/search?gl=us&q=%s" as "URL with %s in place of query")
+Google Chrome -> (open URL of "chrome://settings/searchEngines" to access "Manage search engines and site search" page) -> Site search -> Add ->  (add an item with "Google US 2" as "Name", "ㅎ" as "Shortcut", and "https://www.google.com/search?gl=us&q=%s" as "URL with %s in place of query")
+
+- setting Finder to show the status bar
+Finder -> (select "View" in the menu) -> (select "Show Status Bar")
 
 - enabling key repeats on a Mac
 defaults write -g ApplePressAndHoldEnabled 0
