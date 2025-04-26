@@ -6,6 +6,8 @@ System Settings -> Trackpad -> Point & Click -> (turn on "Tap to click")
 System Settings -> Trackpad -> Scroll & Zoom -> (turn off "Natural scrolling")
 System Settings -> Trackpad -> Scroll & Zoom -> (turn off "Zoom in or out")
 System Settings -> Trackpad -> More Gestures -> Swipe between pages -> (set as "Off")
+System Settings -> Trackpad -> More Gestures -> Mission Control -> (set as "Swipe Up with Four Fingers")
+System Settings -> Trackpad -> More Gestures -> App Expose -> (set as "Swipe Down with Four Fingers")
 
 - changing the keyboard settings
 System Settings -> Keyboard -> (set "Key repeat rate" as the fastest and "Delay until repeat" as the shortest)
