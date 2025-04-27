@@ -48,7 +48,7 @@ https://nolboo.github.io/blog/2015/08/21/oh-my-zsh/
 
 - better auto-completion for oh-my-zsh
 http://stackoverflow.com/questions/24226685/have-zsh-return-case-insensitive-auto-complete-matches-but-prefer-exact-matches
-Create a file ~/.oh-my-zsh/custom/better-completion.zsh (assuming you are using default paths for oh-my-zsh) with the following line.
+(Create a file ~/.oh-my-zsh/custom/better-completion.zsh (assuming you are using default paths for oh-my-zsh) with the following line.)
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 - brew
@@ -74,12 +74,29 @@ brew install wget
 
 - vim (for getting latest version)
 brew install vim
-(restarting the terminal is needed after the installation)
+(Restarting the terminal is needed after the installation.)
+
+- macvim
+brew install macvim
+
+- p7zip
+brew install p7zip
+(usage:
+ $ 7z a -mx0 archive.7z file1.txt file2.txt
+ $ 7z a -mx9 archive.7z file1.txt file2.txt
+ $ 7z x archive.7z
+ $ 7z x -oDirName archive.7z
+)
 
 - httpie
 brew install httpie
-(httpie usage:
- $ http -f POST www.test.com:5001/remove_messages message_thread_id=99999999)
+(usage:
+ $ http -f POST www.test.com:5001/remove_messages message_thread_id=99999999
+)
+
+- WindowMover
+https://nicholaschoi.github.io/
+(Click the download link to WindowMover on the website.)
 
 - setting vim as the editor for git in order to prevent commit errors
 git config --global core.editor $(which vim)
