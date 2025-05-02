@@ -42,6 +42,7 @@ http://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typin
 
 - iTerm2
 https://www.iterm2.com/
+(After the installation, make a change in the settings to make the Option key to work properly: iTerm2 -> (select "Settings..." in the menu) -> Profiles -> Keys -> Left option key: -> (set as "Esc+").)
 
 - zsh & oh-my-zsh
 https://nolboo.github.io/blog/2015/08/21/oh-my-zsh/
