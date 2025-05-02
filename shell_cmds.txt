@@ -56,8 +56,8 @@ git checkout branchname filename
 - copy to the clipboard
 pbcopy
 e.g. $ pbcopy
-     blah<CTRL-J>
-     haha<CTRL-D><CTRL-D>
+     sentence1<Ctrl + J>
+     sentence2<Ctrl + D><Ctrl + D>
      $
 
 - paste from the clipboard
@@ -68,9 +68,9 @@ ${string##substring}
 e.g. The * is a wildcard, matching everything. The command ${0##/*} prints the value of $0 unless it starts with a forward slash, in which case it prints nothing.
 
 - commands starting with '!'
-!! // run the last command again
-!(string) // run the last command starting with the string (e.g. $ !vi)
-!?(string) // run the last command containing the string (e.g. $ !?-al)
+!!  // run the last command again
+!(string)  // run the last command starting with the string (e.g. $ !vi)
+!?(string)  // run the last command containing the string (e.g. $ !?-al)
 
 - 최근에 실행된 명령에서 일부를 치환하기
 ^(old string)^(new string)
@@ -78,28 +78,29 @@ e.g. $ ls text.c
      ......
      $ ^text^test
 
-- frequently used bash shortcuts
-(prerequisite for Option key to work properly: "iTerm2" -> "Preferences..." -> "Profiles" -> "Keys" -> select "Esc+" for "Left Option Key:")
-Ctrl + l // clear the screen
-Ctrl + b // move back one character
-Ctrl + f // move forward one character
-Ctrl + a // go to the beginning of line
-Ctrl + e // go to the end of line
-Option + b // move the cursor backward one word
-Option + f // move the cursor forward one word
-Ctrl + d // delete current character
-Ctrl + u // cut the whole line
-Ctrl + k // cut from the cursor to the end of line
-Option + d // cut the word from the cursor
-Option + Backspace // cut the word before the cursor
-Ctrl + y // paste the last cut text
-Option + y (after using Ctrl + y) // loop through the previously cut texts
-Option + . // loop through the arguments of the previous commands
-Ctrl + - // undo the last edit
-Ctrl + r // search through history as you type, repeat Ctrl + r to search further
-Ctrl + rr // search through history the last keyword again
-Ctrl + g // cancel the search and restore the last location in history
-Ctrl + xx // move the cursor between another position and the current position
+- frequently used keyboard shortcuts in Bash or Zsh
+(a prerequisite for the Option key to work properly: "iTerm2" -> (select "Settings..." in the menu) -> "Profiles" -> "Keys" -> "Left option key:" -> (set as "Esc+"))
+Ctrl + L  // clear the screen
+Ctrl + B  // move back one character
+Ctrl + F  // move forward one character
+Ctrl + A  // go to the beginning of line
+Ctrl + E  // go to the end of line
+Option + B  // move the cursor backward one word
+Option + F  // move the cursor forward one word
+Ctrl + D  // delete current character
+Ctrl + U  // cut the whole line
+Ctrl + K  // cut from the cursor to the end of line
+Option + D  // cut the word from the cursor
+Option + Backspace  // cut the word before the cursor
+Ctrl + W  // cut the word before the cursor    When there are non-alphanumeric characters, Ctrl + W behaves different to Option + Backspace in Bash while they behave the same in Zsh.
+Ctrl + Y  // paste the last cut text
+Option + Y (after using Ctrl + Y)  // loop through the previously cut texts
+Option + .  // loop through the arguments of the previous commands
+Ctrl + -  // undo the last edit
+Ctrl + R  // search through history as you type, repeat Ctrl + R to search further
+Ctrl + RR  // search through history the last keyword again
+Ctrl + G  // cancel the search and restore the last location in history
+Ctrl + XX  // move the cursor between another position and the current position
 
 - copy the working directory path to the clipboard without the newline
 pwd | awk '{printf "%s", $0}' | pbcopy
@@ -122,11 +123,11 @@ e.g. $ pbpaste
      $
 
 - differences among '<', '<<' and '<<<'
-'<' // redirection
+'<'  // redirection
 e.g. $ awk '{print}' < text.txt
      ...
      $
-'<<' // here document
+'<<'  // here document
 e.g. $ awk '{print}' << haha
      heredoc> ha
      heredoc> ha
@@ -134,7 +135,7 @@ e.g. $ awk '{print}' << haha
      ha
      ha
      $
-'<<<' // here string
+'<<<'  // here string
 e.g. $ awk '{print}' <<< haha
      haha
      $ awk '{print}' <<< "haha"
