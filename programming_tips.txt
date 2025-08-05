@@ -1,0 +1,93 @@
+- accessing Google Sheets in Python using gspread
+https://docs.gspread.org/en/latest/
+
+- 웹 개발자 변정훈 씨의 repositories
+https://github.com/outsideris?tab=repositories
+
+- about Vim registers
+http://www.brianstorti.com/vim-registers/
+
+- web programming language references
+https://www.w3schools.com/
+
+- programming language tutorials
+https://www.tutorialspoint.com/tutorialslibrary.htm
+
+- Java tutorials
+https://docs.oracle.com/javase/tutorial/
+
+- Java programming basics course
+https://www.udacity.com/course/java-programming-basics--ud282
+
+- URL of an image on Google Drive
+http://drive.google.com/uc?export=view&id=(FILEID extracted from the link to share)
+(an alternative) https://drive.usercontent.google.com/download?export=view&authuser=0&id=(FILEID extracted from the link to share)
+  // e.g. FILEID is "0B2nmJ_DIvLZtS0VGSnNRVlVTQTA" if the link to share is "https://drive.google.com/file/d/0B2nmJ_DIvLZtS0VGSnNRVlVTQTA/view?usp=sharing".
+
+- Django tutorials
+https://docs.djangoproject.com/en/5.2/intro/tutorial01/
+https://tutorial.djangogirls.org/ko/django_models/
+
+- FastAPI: a web framework for building APIs with Python
+https://fastapi.tiangolo.com/tutorial/
+
+- Vim scripting cheatsheet
+https://devhints.io/vimscript
+
+- about Bash arrays
+https://www.linuxjournal.com/content/bash-arrays
+
+- Node.js: a free, open-source, cross-platform JavaScript runtime environment
+https://nodejs.org/ko/download/current
+
+- Next.js: a React framework built on top of Node.js
+https://nextjs.org/docs/app/getting-started
+
+- React: a JavaScript library for building user interfaces
+https://react.dev/
+
+- React tutorials published in 2019
+https://react.vlpt.us/
+
+- interactive React tutorials
+https://react-tutorial.app/
+
+- calling a remote API in a React application
+https://www.daleseo.com/react-hooks-use-fetch/
+
+- setting up a database for a Next.js application using Amazon RDS and Prisma
+https://velog.io/@dbstj0403/RDS-Prisma-Next.js로-프로젝트-세팅하기
+
+- Material UI: an open-source React component library
+https://mui.com/material-ui/getting-started/
+https://www.daleseo.com/?tag=MaterialUI
+
+- how to add whitespace between elements in React JSX
+https://techstacker.com/how-to-add-white-space-between-elements-react-jsx/
+
+- Express.js: a web application framework for Node.js
+https://expressjs.com/
+
+- handling POST data in Express.js
+https://kasterra.github.io/handle-POST-data-in-express/
+
+- serving static files in Express.js
+https://expressjs.com/en/starter/static-files.html
+
+- Axios: an HTTP client library for both browsers and Node.js
+https://axios-http.com/docs/intro
+
+- how to resolve CORS errors
+https://aodtns.tistory.com/121
+https://surprisecomputer.tistory.com/32
+
+- Remix: a web-based Ethereum IDE
+https://remix.ethereum.org/
+
+- how to interact with a deployed smart contract
+https://ethereum.stackexchange.com/questions/95023/hardhat-how-to-interact-with-a-deployed-contract
+https://docs.openzeppelin.com/learn/deploying-and-interacting#interacting-from-the-console
+
+- about kubectl and ingress in Kubernetes
+https://kubernetes.io/docs/concepts/services-networking/ingress/
+https://guide.ncloud-docs.com/docs/k8s-k8sexamples-ingress

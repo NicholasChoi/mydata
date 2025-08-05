@@ -1,20 +1,46 @@
-- Twilio : enabling phones, VoIP, and messaging to be embedded into web, desktop, and mobile software
+- Twilio: enabling phones, VoIP, and messaging to be embedded into web, desktop, and mobile software
 https://www.twilio.com/
 
 - 비프로그래머를 위한 strings.xml 편집기
 http://jungilhan.github.io/strings-xml-editor/
 
-- Fabric : real-time alert integration for an app (formerly known as Crashlytics)
+- Fabric: real-time alert integration for an app (formerly known as Crashlytics)
 https://fabric.io
 
-- Branch : deep linking integration 
+- Branch: deep linking integration 
 https://branch.io/
 
 - translation management systems
-OneSky : app translation services & translation management system
+OneSky: app translation services & translation management system
 https://www.oneskyapp.com/
-Crowdin : localization management platform
+Crowdin: localization management platform
 https://crowdin.com/
 
-- Codota : which understands the world's code and provides you with code suggestion
+- Codota: which understands the world's code and provides you with code suggestion
 https://www.codota.com/
+
+- various helpful links for programmers (The Awesome List)
+https://github.com/sindresorhus/awesome
+
+- a list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev
+https://github.com/ripienaar/free-for-dev
+
+- Pythonista 3: a Python IDE for iPad and iPhone
+https://omz-software.com/pythonista/
+for using pip on Pythonista 3: https://liwonfather.tistory.com/131
+
+- Termius: a modern SSH client
+https://www.termius.com/
+
+- Codeanywhere: a cloud-based IDE
+https://codeanywhere.com/
+
+- Heroku: a PaaS for deploying apps
+https://www.heroku.com/
+usage of Heroku: https://ramveloper.tistory.com/73
+
+- Koyeb: (an alternative of Heroku with a free tier) a PaaS for deploying apps
+https://www.koyeb.com/
+
+- JSON formatter & validator
+https://jsonformatter.curiousconcept.com/

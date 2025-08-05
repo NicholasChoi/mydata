@@ -1,2 +1,2 @@
-- Writefull : helper for writing sentences
+- Writefull: helper for writing sentences
 https://writefullapp.com/

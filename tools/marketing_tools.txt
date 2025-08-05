@@ -1,18 +1,18 @@
-- ARGOS(아르고스) : 자사 및 경쟁사의 웹 및 앱의 성능 및 장애여부 모니터링 솔루션
-http://www.vivans.net/html/P_argos.html
+- ARGOS: 자사 및 경쟁사의 웹 및 앱의 성능 및 장애여부 모니터링 솔루션
+https://www.vivans.net/argos/
 
-- Appboy : mobile marketing automation
+- Appboy: mobile marketing automation
 https://www.appboy.com/solutions/
 
-- Twilio : enabling phones, VoIP, and messaging to be embedded into web, desktop, and mobile software
+- Twilio: enabling phones, VoIP, and messaging to be embedded into web, desktop, and mobile software
 https://www.twilio.com/
 
-- sift science : real-time automated fraud prevention
-https://siftscience.com/
+- Sift: real-time automated fraud prevention
+https://sift.com/
 
-- Zendesk : customer service system
+- Zendesk: customer service system
 https://www.zendesk.com/
 http://www.trueinfo.co.kr/zendesk.php
 
-- Mechanical Turk : ask workers to complete human intelligence tasks and get results
+- Mechanical Turk: ask workers to complete human intelligence tasks and get results
 https://requester.mturk.com/
