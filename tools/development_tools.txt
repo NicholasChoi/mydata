@@ -35,11 +35,14 @@ https://www.termius.com/
 - Codeanywhere: a cloud-based IDE
 https://codeanywhere.com/
 
-- Heroku: a PaaS for deploying apps
+- Heroku: a PaaS for deploying applications
 https://www.heroku.com/
 usage of Heroku: https://ramveloper.tistory.com/73
 
-- Koyeb: (an alternative of Heroku with a free tier) a PaaS for deploying apps
+- Vercel: (an alternative of Heroku with a free tier) a PaaS for deploying applications
+https://vercel.com/
+
+- Koyeb: (an alternative of Heroku with a free tier) a PaaS for deploying applications
 https://www.koyeb.com/
 
 - JSON formatter & validator
