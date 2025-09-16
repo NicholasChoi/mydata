@@ -67,7 +67,7 @@ pbpaste
 ${string##substring}
 e.g. The * is a wildcard, matching everything. The command ${0##/*} prints the value of $0 unless it starts with a forward slash, in which case it prints nothing.
 
-- commands starting with '!'
+- commands starting with "!"
 !!  // run the last command again
 !(string)  // run the last command starting with the string (e.g. $ !vi)
 !?(string)  // run the last command containing the string (e.g. $ !?-al)
@@ -122,12 +122,13 @@ e.g. $ pbpaste
      T140801KR%
      $
 
-- differences among '<', '<<' and '<<<'
-'<'  // redirection
+- differences among "<", "<<" and "<<<"
+"<"  // redirection
 e.g. $ awk '{print}' < text.txt
      ...
      $
-'<<'  // here document
+
+"<<"  // here document
 e.g. $ awk '{print}' << haha
      heredoc> ha
      heredoc> ha
@@ -135,7 +136,8 @@ e.g. $ awk '{print}' << haha
      ha
      ha
      $
-'<<<'  // here string
+
+"<<<"  // here string
 e.g. $ awk '{print}' <<< haha
      haha
      $ awk '{print}' <<< "haha"
@@ -144,7 +146,7 @@ e.g. $ awk '{print}' <<< haha
      ...
      $
 
-- usage of command 'awk'
+- usage of command "awk"
 e.g. $ cat text.txt
      1 a
      2 b
@@ -161,9 +163,9 @@ e.g. $ cat text.txt
      aaabbbccc
      $
 
-- 'awk'의 용법 중에서 "awk PATTERN {ACTION} FILE" 포맷의 PATTERN 부분에 대해
-awk 'EXPRESSION {COMMAND} FILE    # FILE 내의 각 행마다 EXPRESSION을 만족하는지 여부를 검사하고 EXPRESSION을 만족하는 각 행에 대해 COMMAND를 수행함.
-awk 'EXPRESSION1,EXPRESSION2 {COMMAND} FILE    # FILE 내의 각 행을 순차적으로 검사하면서 EXPRESSION1을 가장 먼저 만족하는 제1행을 찾아냄. 만약 제1행이 존재하지 않는다면 아무 행에 대하여도 COMMAND를 수행하지 않음. 만약 제1행이 존재한다면 제1행부터 각 행을 순차적으로 검사하면서 EXPRESSION2를 가장 먼저 만족하는 제2행을 찾아냄. 만약 제2행이 존재하지 않는다면 제1행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함. 만약 제2행이 존재한다면 제1행부터 제2행까지의 각 행에 대해 COMMAND를 수행하고, 제2행의 다음 행부터 각 행을 순차적으로 검사하면서 EXPRESSION1을 가장 먼저 만족하는 새로운 제1행을 찾아내는 단계부터 반복함.
+- 'awk'의 용법 중에서 "awk 'PATTERN {ACTION}' FILE" 포맷의 PATTERN 부분에 대해
+awk 'EXPRESSION {COMMAND}' FILE    # FILE 내의 각 행마다 EXPRESSION을 만족하는지 여부를 검사하고 EXPRESSION을 만족하는 각 행에 대해 COMMAND를 수행함.
+awk 'EXPRESSION1,EXPRESSION2 {COMMAND}' FILE    # FILE 내의 각 행을 순차적으로 검사하면서 EXPRESSION1을 가장 먼저 만족하는 제1행을 찾아냄. 만약 제1행이 존재하지 않는다면 아무 행에 대하여도 COMMAND를 수행하지 않음. 만약 제1행이 존재한다면 제1행부터 각 행을 순차적으로 검사하면서 EXPRESSION2를 가장 먼저 만족하는 제2행을 찾아냄. 만약 제2행이 존재하지 않는다면 제1행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함. 만약 제2행이 존재한다면 제1행부터 제2행까지의 각 행에 대해 COMMAND를 수행하고, 제2행의 다음 행부터 각 행을 순차적으로 검사하면서 EXPRESSION1을 가장 먼저 만족하는 새로운 제1행을 찾아내는 단계부터 반복함.
 e.g. awk '0,0 {COMMAND}' FILE    # EXPRESSION1을 만족하는 행이 없으므로 아무 행에 대하여도 COMMAND를 수행하지 않음.
      awk '0,1 {COMMAND}' FILE    # EXPRESSION1을 만족하는 행이 없으므로 아무 행에 대하여도 COMMAND를 수행하지 않음.
      awk '1,0 {COMMAND}' FILE    # 첫번째 행이 EXPRESSION1을 가장 먼저 만족하고 EXPRESSION2를 만족하는 행이 없으므로 첫번째 행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함.
@@ -171,7 +173,7 @@ e.g. awk '0,0 {COMMAND}' FILE    # EXPRESSION1을 만족하는 행이 없으므�
      awk 'NR!=1,0 {COMMAND}' FILE    # 행의 순번이 1과 같지 않다는 의미의 EXPRESSION1을 두번째 행이 가장 먼저 만족하고 EXPRESSION2를 만족하는 행이 없으므로 두번째 행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함.
      awk 'NR!=1,1 {COMMAND}' FILE    # 행의 순번이 1과 같지 않다는 의미의 EXPRESSION1을 두번째 행이 가장 먼저 만족하고 두번째 행이 EXPRESSION2도 만족하므로 두번째 행에 대해 COMMAND를 수행하고, 세번째 행부터 마지막 행까지의 각 행도 EXPRESSION1 및 EXPRESSION2를 만족하므로 세번째 행부터 마지막 행까지의 각 행에 대하여도 COMMAND를 수행함. 결국 두번째 행부터 마지막 행까지의 각 행에 대해 COMMAND를 수행함.
 
-- usage of command 'sed'
+- usage of command "sed"
 e.g. $ echo hihi | sed 's/hi/hello/g'
      hellohello
      $
@@ -186,3 +188,10 @@ open .
 - activate the topmost window of a specified application
 open -a <applicationName>
 e.g. $ open -a MacVim
+
+- usage of command "find"
+e.g. $ find . \( -iname "*.jpg" -o -iname "*.jpeg" \) -iname "img*"
+         # -iname PATTERN: finds files with names matching a pattern case-insensitively
+         # EXPRESSION -or EXPRESSION (alternatively, "EXPRESSION -o EXPRESSION"): the logical OR operator
+         # EXPRESSION -and EXPRESSION (alternatively, "EXPRESSION -a EXPRESSION" or "EXPRESSION EXPRESSION"): the logical AND operator
+         # \( EXPRESSION \): evaluates the parenthesized expression first
