@@ -323,26 +323,26 @@ inoremap <Leader><Leader> <Leader>
 " skipblanks (bool): true: Skip blank lines
 "                    false: Don't skip blank lines
 function! MoveToLineWithSameOrLowerIndentation(exclusive, fwd, lowerlevel, skipblanks)
-  let line = line('.')
-  let column = col('.')
-  let lastline = line('$')
-  let indent = indent(line)
-  let stepvalue = a:fwd ? 1 : -1
-  while (line > 0 && line <= lastline)
-    let line = line + stepvalue
-    if ( ! a:lowerlevel && indent(line) == indent ||
-          \ a:lowerlevel && indent(line) < indent)
-      if (! a:skipblanks || strlen(getline(line)) > 0)
-        if (a:exclusive)
-          let line = line - stepvalue
+    let line = line('.')
+    let column = col('.')
+    let lastline = line('$')
+    let indent = indent(line)
+    let stepvalue = a:fwd ? 1 : -1
+    while line > 0 && line <= lastline
+        let line = line + stepvalue
+        if !a:lowerlevel && indent(line) == indent ||
+                \ a:lowerlevel && indent(line) < indent
+            if !a:skipblanks || strlen(getline(line)) > 0
+                if a:exclusive
+                    let line = line - stepvalue
+                endif
+                exe line
+                " move to the same column
+                "exe "normal " column . "|"
+                return
+            endif
         endif
-        exe line
-        " move to the same column
-        "exe "normal " column . "|"
-        return
-      endif
-    endif
-  endwhile
+    endwhile
 endfunction
 
 " Moving back and forth between lines with the same indentation or lower indentation.
