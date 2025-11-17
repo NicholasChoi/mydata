@@ -174,3 +174,7 @@ zk
 [m
 ]M
 [M
+(Visual mode, e.g. v) -> p  // :help v_p
+  // paste, and the previously selected text is put in the unnamed register and the clipboard
+(Visual mode, e.g. v) -> P  // :help v_P
+  // paste, and the unnamed register and the clipboard remain unchanged
