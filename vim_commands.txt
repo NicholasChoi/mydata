@@ -32,6 +32,7 @@ q{0-9a-zA-Z"}
 ==
 CTRL-O
 CTRL-I
+CTRL-]  // jump to the subject under the cursor in the help window
 CTRL-R
 CTRL-W CTRL-V
 CTRL-W CTRL-S
@@ -153,6 +154,9 @@ CTRL-V -> (create a Visual block on multiple lines) -> g CTRL-A  // :help v_g_CT
 :cnext  // equivalent to :cn
 :cprev  // equivalent to :cp    equivalent to :cN
 :g/pattern  // print all the lines (each line only once) where a pattern matches    e.g. :g/[0-9]\+
+:g/pattern/{Ex command}  // e.g. :1,$g/THE LINE TO BE DELETED/normal dd
+:g!/pattern/{Ex command}  // e.g. :g!/THE LINE TO BE REMAINED/d
+:v/pattern/{Ex command}  // equivalent to :g!/pattern/{Ex command}
 (Visual mode) -> zf  // create a fold
 zd
 zD
